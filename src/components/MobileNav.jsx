@@ -1,21 +1,33 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function MobileNav() {
-  return (
-    <div className='w-full h-full  flex flex-col gap-10 bg-[#FFF0EB]'>
-    <ul className='flex flex-col  font-semibold text-2xl cursor-pointer'>
-        <li className=' hover:bg-[#FFB49A]  p-3'>Home</li>
-        <li className=' hover:bg-[#FFB49A]  p-3'>about</li>
-        <li className=' hover:bg-[#FFB49A]  p-3'>Jobs</li>
-        <li className=' hover:bg-[#FFB49A]  p-3'>Contact</li>
-        
-    </ul>
-    <div>
-            <h1>LOGIN | SIGNUP</h1>
-        <p>DARKTHEME</p>
-    </div>
-    </div>
-  )
+function MobileNav({toggle , setToggle}) {
+    return (
+        <div className='w-full h-full  flex flex-col gap-10 bgColor text-white'>
+            <ul className='flex flex-col items-center uppercase  font-semibold text-md cursor-pointer' onClick={()=>setToggle(!toggle)}>
+                <Link to='/profile'>
+                    <li className='p-3'>Profile</li>
+                </Link>
+                <Link  to='/home'>
+                    <li className='p-3'>Home</li>
+                </Link>
+                <Link  to='/jobs'>
+                    <li className='p-3'>Jobs</li>
+                </Link>
+                <Link  to='/contact'>
+                    <li className='p-3'>Contact</li>
+                </Link>
+
+
+            </ul>
+            <div className=' flex justify-center uppercase  font-semibold text-md cursor-pointer' >
+                <div className='flex gap-3'>
+                    <h1 className='border border-black rounded py-2 px-4'>LOGIN </h1>
+                    <h1 className='border bg-[#E45826] text-[#fef2ee]  rounded py-2 px-4'>Singin  </h1>
+                </div>
+            </div>
+        </div>
+    )
 }
 
-export default MobileNav
+export default MobileNav    

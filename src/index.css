@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bgColor{
+    background-color: #07081c;
+    /* #E45826 orange */
+    /* darkblue */
+    /* background-color: #0b0c1f   ; */
+}
