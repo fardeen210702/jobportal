@@ -8,5 +8,12 @@
     /* darkblue */
     /* background-color: #0b0c1f   ; */
 }
+.shape{
+    filter: drop-shadow(0 0 1px white );
+}
+.text{
+    text-shadow: 0 0 1px white;
+}
 
 
+  
