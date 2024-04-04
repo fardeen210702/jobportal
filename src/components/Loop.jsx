@@ -1,8 +1,21 @@
-import { useEffect, useState } from 'react'
+import {  useEffect, useState } from 'react'
 import {arr} from '../components/LoopData'
 import { FaArrowLeft , FaArrowRight } from "react-icons/fa";
-function    Loop() {
+function Loop() {
     const [slide, setSlide] = useState(0)    
+     
+    useEffect(() => {
+        let scroll = setInterval(() => {
+        setSlide((prev) => prev===arr.length-1 ? 0 : prev+1)    
+            
+        }, 5000);
+
+        return ()=>{
+            clearInterval(scroll)
+        }
+
+    }, [slide])
+    
 
     function handleLeft(){
         setSlide((prev) => prev===0 ? arr.length -1 : prev-1)
@@ -13,7 +26,7 @@ function    Loop() {
     }
 
     return (
-    <div className='rounded-[5px] md:w-[97%] h-min md:mt-10  overflow-hidden  text-white '>
+    <div className='rounded-[5px] w-[98%] md:w-[97%] h-min md:mt-10  overflow-hidden  text-white '>
         <div className="content flex w-full transition-all duration-1000 ease-in-out  " style={{transform: `translateX(-${slide * 100}%)`}}>
             {
                 arr.map((el,index)=>{

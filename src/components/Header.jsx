@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import  {  useState } from 'react'
 import logo from '../assets/logo.svg'
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
@@ -41,7 +41,7 @@ function Header() {
             {/* Mid screen+ navbar */}
 
             <div className='hidden md:flex w-full p-3 flexx justify-center  '>
-                <div className='bg-[#fefafa] flex justify-between w-[97%]  p-2 rounded-[5px]'>
+                <div className='max-w-[1800px]  bg-[#fefafa] flex justify-between w-[97%]  p-2 rounded-[5px]'>
                     <div className='flex gap-2 items-center'>
                         <figure className='w-[50px]'>
                             <img src={logo} alt="" />
@@ -52,12 +52,15 @@ function Header() {
                     </div>
 
                     <div className='flex  items-center gap-2'>
-                        <ul className='flex gap-2 font-semibold cursor-pointer text-[#0b0c1f]'>
+                        <ul className='flex gap-4 mr-2 font-semibold uppercase cursor-pointer  text-[#0b0c1f]'>
                             <Link to='/jobs'>
-                            <li>Jobs</li>
+                            <li className='hover:text-[#E45826]'>Jobs</li>
                             </Link>
                             <Link to='/profile'>
-                            <li>Profile</li>
+                            <li  className='hover:text-[#E45826]'>Profile</li>
+                            </Link>
+                            <Link to='/interviewquestions'>
+                            <li  className='hover:text-[#E45826]'>ip</li>
                             </Link>
                         </ul>
                         <div className="logins flex gap-2">
