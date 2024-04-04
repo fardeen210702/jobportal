@@ -4,9 +4,8 @@ import microsoft from '../assets/microsoft.png'
 import criteo from '../assets/criteo.png'
 import flite from '../assets/flite.png'
 import makemytrip from '../assets/makemytrip.png'
-import ola from '../assets/ola.png'
-import uber from '../assets/uber.png'
-import shopify from '../assets/shopify.png'
+import ola from '../assets/olasvg.svg'
+import uber from '../assets/ubersvg.svg'
 import unbounce from '../assets/unbounce.png'
 import netlfix from '../assets/netflix.png'
 
@@ -39,13 +38,12 @@ const companies = [
         img:unbounce
     },
     {
-        img:ola
+        img:ola,
+        color:'white'
     },
     {
-        img:uber
-    },
-    {
-        img:shopify
+        img:uber,
+
     },
     {
         img:microsoft
