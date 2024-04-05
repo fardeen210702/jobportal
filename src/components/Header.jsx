@@ -41,7 +41,7 @@ function Header() {
             {/* Mid screen+ navbar */}
 
             <div className='hidden md:flex w-full p-3 flexx justify-center  '>
-                <div className='max-w-[1800px]  bg-[#fefafa] flex justify-between w-[97%]  p-2 rounded-[5px]'>
+                <div className='max-w-[1800px]  bg-[#fefafa] flex justify-between w-[97%]  p-2 rounded-[3px]'>
                     <div className='flex gap-2 items-center'>
                         <figure className='w-[50px]'>
                             <img src={logo} alt="" />
