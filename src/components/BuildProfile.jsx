@@ -66,7 +66,7 @@ function BuildProfile({onSubmit})  {
           <div className=' md:overflow-y-scroll  md:w-[55%] md:bg-[white] bg-[#0b0c1f]  '>
             <form action=" " className=' flex flex-col items-center w-full gap-4 font-semibold' onSubmit={handleSubmit} autoComplete='off'>
               <div className='my-2 '>
-                <h1 className=' text2 text-2xl text-[rgb(228,88,38)] md:text-[#0b0c1f] font-semibold sm:text-3xl md:mx-1  '>Start building profile</h1>
+                <h1 className=' text2 text-2xl text-[#E45826] md:text-[#0b0c1f] font-semibold sm:text-3xl md:mx-1  '>Start building profile</h1>
               </div>
               <div className=' w-full md:w-full lg:w-[80%] sm:w-[50%]  gap-4 flex flex-col items-center '>
                 <div className='flex flex-col pl-2 w-full '>
