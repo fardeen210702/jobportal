@@ -30,20 +30,22 @@ function Profile(){
   }
   console.log(list,'list');
 
+ 
  return <div>
   {
     !list ?(
-
       <BuildProfile onSubmit = {handleSubmit}/>
     ):( <>
       {
         list.map((el,id)=>{
-          return <BuiltProfile key={id} {...el}/>
+          return <BuiltProfile key={id} {...el} />
         })
       }
     </>    
     )
   }
+
+  
 
  
  </div>

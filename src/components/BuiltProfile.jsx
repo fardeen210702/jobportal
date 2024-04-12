@@ -12,8 +12,9 @@ setContact(!contact)
 }
 
 
+
   return (
-    <div className='w-full border border-[red] flex justify-center h-[100vh] lg:h-min lg:justify-start lg:px-6'>
+    <div className='w-full border border-[red] flex justify-center h-[100vh]  lg:justify-start lg:px-6'>
         <div className='realtive w-[98%] sm:w-[70%] lg:w-1/3  mt-20 md:mt-24 border border-gray-500 p-2 lg:rounded-[4px] text-white flex flex-col items-center  '>
             <figure className='w-[80px] h-[80px] rounded-full overflow-hidden border-2 border-white my-2'>
                 <img src={pic} alt="" />

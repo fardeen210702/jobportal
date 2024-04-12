@@ -6,12 +6,16 @@ import Jobs from './pages/Jobs'
 import Profile from './pages/Profile'
 import Contact from './pages/Contact'
 import InterviewQuestions from './pages/InterviewQuestions'
+import SinglePage from './pages/SinglePage'
+
 
 
 function App() {
 
   return (
     <div className='flex justify-center w-full  bg-[#07081c]'>
+
+
       <div className='w-full max-w-[1800px] '>
         <Router>
           <Header />
@@ -22,6 +26,7 @@ function App() {
             <Route path='/profile' element={<Profile/>} />
             <Route path='/contact' element={<Contact/>} />
             <Route path='/interviewquestions' element={<InterviewQuestions/>} />
+            <Route path='/singlepage/:id' element={<SinglePage/>} />
           </Routes>
         </Router>
       </div>
