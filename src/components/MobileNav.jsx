@@ -23,12 +23,12 @@ function MobileNav({toggle , setToggle}) {
 
 
             </ul>
-            <div className=' flex justify-center uppercase  font-semibold text-md cursor-pointer' >
+            {/* <div className=' flex justify-center uppercase  font-semibold text-md cursor-pointer' >
                 <div className='flex gap-3'>
                     <h1 className='border border-black rounded py-2 px-4'>LOGIN </h1>
                     <h1 className='border bg-[#E45826] text-[#fef2ee]  rounded py-2 px-4'>Singin  </h1>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
