@@ -4,6 +4,7 @@ import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import MobileNav from './MobileNav';
 import { Link } from 'react-router-dom';
+import { FaUserCircle } from "react-icons/fa";
 
 
 function Header() {
@@ -56,17 +57,19 @@ function Header() {
                             <Link to='/jobs'>
                             <li className='hover:text-[#E45826]'>Jobs</li>
                             </Link>
-                            <Link to='/profile'>
-                            <li  className='hover:text-[#E45826]'>Profile</li>
-                            </Link>
+                            
                             <Link to='/interviewquestions'>
-                            <li  className='hover:text-[#E45826]'>ip</li>
+                            <li  className='hover:text-[#E45826]'>interview prep</li>
+                            </Link>
+
+                            <Link to='/profile'>
+                            <li  className='hover:text-[#E45826] text-2xl text-[#E45826]'><FaUserCircle/></li>
                             </Link>
                         </ul>
-                        <div className="logins flex gap-2">
+                        {/* <div className="logins flex gap-2">
                             <button className='border border-black rounded py-1 px-2'>Login  </button>
                             <button className='border bg-[#0b0c1f] text-[#fef2ee] border-black rounded py-1 px-2'>Singin  </button>
-                        </div>
+                        </div> */}
 
 
                     </div>
