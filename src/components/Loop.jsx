@@ -17,13 +17,13 @@ function Loop() {
     }, [slide])
     
 
-    function handleLeft(){
-        setSlide((prev) => prev===0 ? arr.length -1 : prev-1)
-    }
-    function handleRight(){
-        setSlide((prev) => prev===arr.length-1 ? 0 : prev+1)
+    // function handleLeft(){
+    //     setSlide((prev) => prev===0 ? arr.length -1 : prev-1)
+    // }
+    // function handleRight(){
+    //     setSlide((prev) => prev===arr.length-1 ? 0 : prev+1)
 
-    }
+    // }
 
     return (
     <div className='rounded-[5px] w-[98%] md:w-[97%] h-min md:mt-10  overflow-hidden  text-white '>
@@ -45,13 +45,13 @@ function Loop() {
         </div>
         <div className='flex w-full items-center justify-center gap-3 mb-4 mt-5 '>
 
-        <button onClick={handleLeft} className='text-2xl text-[#E45826]'> <FaArrowLeft/></button>
+        {/* <button onClick={handleLeft} className='text-2xl text-[#E45826]'> <FaArrowLeft/></button>
         {
             arr.map((_,index)=>{
                 return <p  key={index} className={`rounded-[50%] h-[10px] w-[10px] border border-red-300 bg-[#E45826] transition-all duration-500 ${slide === index ? 'w-[12px] h-[12px] bg-[#f99c9c] ' : ''}`}></p>
             })
         }
-        <button onClick={handleRight} className='text-2xl text-[#E45826]'> <FaArrowRight/></button>
+        <button onClick={handleRight} className='text-2xl text-[#E45826]'> <FaArrowRight/></button> */}
         </div>
 
     
@@ -59,4 +59,4 @@ function Loop() {
     )
 }
 
-export default Loop
+export default Loop;
