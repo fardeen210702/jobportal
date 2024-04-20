@@ -48,7 +48,7 @@ function Header() {
                             <img src={logo} alt="" />
                         </figure>
                         <Link to='/'>
-                        <h1 className='font-bold text-xl text-[#0b0c1f]' >JOBPORTAL</h1>
+                        <h1 className='font-bold text-xl text-[#0b0c1f] jersey' >JOB PORTAL</h1>
                         </Link>
                     </div>
 
@@ -63,7 +63,7 @@ function Header() {
                             </Link>
 
                             <Link to='/profile'>
-                            <li  className='hover:text-[#E45826] text-2xl text-[#E45826]'><FaUserCircle/></li>
+                            <li  className='hover:text-[#E45826] text-2xl text-[gray]'><FaUserCircle/></li>
                             </Link>
                         </ul>
                         {/* <div className="logins flex gap-2">

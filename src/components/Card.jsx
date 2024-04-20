@@ -1,19 +1,22 @@
 import React from 'react'
 import load from '../assets/load.svg'
 import { FaRegBookmark , FaBookmark } from "react-icons/fa6";
+import { useGlobalContext } from '../contexts/Maincontext';
 
-function Card({ el }) {
-    const { job_title, employer_name, employer_logo, job_city, job_country, job_employment_type, job_is_remote, } = el
+function Card( el ) {
+    const { job_title, employer_name, employer_logo, job_city, job_country, job_employment_type, job_is_remote,job_required_experience  } = el
+    const {handleScrollToTop} = useGlobalContext()
 
     return (
-        <div className='w-[285px] md:w-[300px] border border-[#e4592635] hover:border-[#E45826] bg-[#0b0c1f] transition-all duration-300 ease-in     my-2 text-white'>
+        
+        <div onClick={handleScrollToTop} className='w-[285px] md:w-[350px] border border-[#e4592635] hover:border-[#E45826] bg-[#0b0c1f] transition-all duration-300 ease-in rounded-[4px]    my-2 text-white'>
             <div className='flex justify-between p-3'>
                 <figure className='w-[60px] h-[60px] flex items-center'>
                     {employer_logo ? <img src={employer_logo} alt='' className='w-full h-full object-contain' /> : <img src={load} alt="" />}
                 </figure>
                 <div className='w-[70%]'>
                     <div>
-                    {job_title.length >20 ? <h1> {job_title.substring(0,20) }...</h1> : <h1 >{job_title}</h1>
+                    {job_title.length >20 ? <h1 className='font-semibold'> {job_title.substring(0,20) }...</h1> : <h1 className='font-semibold' >{job_title}</h1>
                         
                     }
                     <h1>{employer_name.substring(0, 20)}</h1>
@@ -30,6 +33,10 @@ function Card({ el }) {
 
                     <h1 className='lowercase bg-[#141535] p-1 text-sm text-gray-500 '> {
                         job_is_remote ? 'remote' : job_employment_type}</h1>
+                        <h1 className='bg-[#141535] p-1 text-sm text-gray-500 hidden md:flex'>
+                            { job_required_experience.experience_mentioned == true ? Math.floor(job_required_experience.required_experience_in_months / 12) : ''  }years exp...
+                        </h1>
+
 
                         <h1 className=' text-md'> <FaRegBookmark/></h1>
                 </div>
@@ -39,6 +46,7 @@ function Card({ el }) {
 
 
         </div>
+       
     )
 }
 

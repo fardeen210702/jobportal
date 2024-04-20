@@ -1,36 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import { useGlobalContext } from '../contexts/Maincontext'
-import Search from '../components/Search'
 import { Link } from 'react-router-dom'
 import Loading from '../components/Loading'
 import Card from './Card'
 
 function AllJobs() {
-    const{jobs} = useGlobalContext()
-    const [showJobs , setShowJobs] = useState([])
-    const [isLoading , setISLoading] = useState(false)
+    const { jobs } = useGlobalContext();
+    const [showJobs, setShowJobs] = useState([])
+    const [isLoading, setISLoading] = useState(false)
 
     useEffect(() => {
-     setShowJobs(jobs.slice(0,9))
+        setShowJobs(jobs.slice(0, 9))
     }, [jobs])
 
     useEffect(() => {
-        window.addEventListener('scroll' , handleScroll)
+        window.addEventListener('scroll', handleScroll)
 
-        function handleScroll(){
-            if(document.documentElement.scrollTop + window.innerHeight +1 >= document.documentElement.scrollHeight){
+        function handleScroll() {
+            if (document.documentElement.scrollTop + window.innerHeight + 1 >= document.documentElement.scrollHeight) {
                 loadMoreData()
             }
         }
 
-        return ()=>{
-        window.removeEventListener('scroll' , handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
         }
 
     }, [showJobs])
 
-    function loadMoreData(){
-        if(!isLoading) {
+    function loadMoreData() {
+        if (!isLoading) {
             setISLoading(true);
             setTimeout(() => {
                 const jobsLength = showJobs.length;
@@ -45,39 +44,31 @@ function AllJobs() {
 
         }
     }
-    
-  
+    return (
+        <div className='w-full  flex justify-center mt-10 ' >
+            <div className='w-[98%]  p-2'>
 
-  return (
-    <div className='w-full  flex justify-center mt-10 '>
-        <div className='w-[98%]  p-2'> 
-        
-        <div className='w-full flex flex-wrap justify-center gap-4  '>
-           {
-            showJobs.map((el,index)=>{
-                return <Link to={`/jobs/singlepage/${index}`} key={index}>
-                    <div className='flex justify-center '>
+                <div className='w-full flex flex-wrap justify-center gap-4  '>
+                    {
+                        showJobs.map((el,id) => {
+                            return <div className='flex justify-center ' key={id}  >
+                                <Link to={`/singlepage/${el.job_id}`}>
+                                    <Card {...el} />
+                                </Link>
+                            </div>
+                        })
+                    }
 
-                    <Card el = {{...el}}/>
-                    </div>
-                </Link>
 
-            })
-           }
-            
+                </div>
+                {isLoading && <div className='w-full flex justify-center'>
+                    <Loading />
 
-        </div>
-        { isLoading && <div className='w-full flex justify-center'>
-            <Loading/>
-
-        </div>}
-           
-
+                </div>}
+            </div>
 
         </div>
-        
-    </div>
-  )
+    )
 }
 
 export default AllJobs
