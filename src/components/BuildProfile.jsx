@@ -55,10 +55,10 @@ function BuildProfile({onSubmit})  {
           </div>
   
   
-          <div className='sm:-mt-28 md:-mt-20 xl:-mt-20 2xl:-mt-24 rounded-[4px] md:overflow-y-scroll sm:w-[60%]   md:w-[45%] lg:w-[30%] 2xl:w-[28%] md:bg-[white] bg-[#0b0c1f]  '>
+          <div className='sm:-mt-28 md:-mt-20 xl:-mt-20 2xl:-mt-24 rounded-[4px] rounded-t-[30px] md:overflow-y-scroll sm:w-[60%]   md:w-[45%] lg:w-[30%] 2xl:w-[28%] md:bg-[white] bg-[#0b0c1f]  '>
             <form action=" " className='star flex flex-col items-center w-full gap-4 font-semibold' onSubmit={handleSubmit} autoComplete='off'>
               <div className='my-2 w-full '>
-                <h1 className=' capitalize text2 text-2xl text-[#E45826]  font-semibold sm:text-3xl md:mx-1 text-center  '>Start building profile</h1>
+                <h1 className=' capitalize text2 text-2xl text-[#E45826]  font-sans sm:text-3xl md:mx-1 text-center  '>Start building profile</h1>
               </div>
               <div className=' w-full  sm:pl-16 md:pl-10  gap-4 flex flex-col items-center '>
                 <div className='flex flex-col pl-2 w-full  '>
@@ -87,7 +87,7 @@ function BuildProfile({onSubmit})  {
                 </div>
                 <div className='flex flex-col pl-2 w-full'>
                   <label className=' uppercase text-white  md:text-[#0f0f0faa] ' htmlFor="">resume</label>
-                  <input className='p-2 w-[90%] sm:w-[80%] rounded-sm  text-white  md:text-[#0f0f0faa]' type="file" name="file" id="file"
+                  <input className='p-2 border border-red-800 w-[90%] sm:w-[80%] rounded-sm   text-white  md:text-[#0f0f0faa]' type="file" name="file" id="file"
                     onChange={handleResumeChange} />
                 </div>
 

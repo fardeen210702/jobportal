@@ -4,6 +4,9 @@
 @tailwind utilities;
 
 
+.jersey{
+  font-family: "Jersey 25", sans-serif;
+}
 .bgColor{
     background-color: #07081c;
     /* #E45826 orange */

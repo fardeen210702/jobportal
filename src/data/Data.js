@@ -30,7 +30,7 @@
           "job_longitude": -84.596344,
           "job_benefits": null,
           "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=android+developer&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=android+developer&htidocid=wSE59agoxY24RZimAAAAAA%3D%3D",
-          "job_offer_expiration_datetime_utc": "2024-05-09T21:30:21.000Z",
+          "job_offer_expiration_datetime_utc": "2024-05-12T21:30:21.000Z",
           "job_offer_expiration_timestamp": 1715290221,
           "job_required_experience": {
             "no_experience_required": false,
