@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function MobileNav({toggle , setToggle}) {
     return (
-        <div className='w-full h-full  flex flex-col gap-10 bgColor text-white'>
+        <div className='w-full h-full  flex flex-col gap-10  text-[#07081c]'>
             <ul className='flex flex-col items-center uppercase  font-semibold text-md cursor-pointer' onClick={()=>setToggle(!toggle)}>
                 <Link  to='/home'>
                     <li className='p-3'>Home</li>

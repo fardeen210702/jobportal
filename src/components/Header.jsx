@@ -18,7 +18,7 @@ function Header() {
 
         <div className=' fixed top-1 left-0 w-full z-[999]'>
             {/* mobile navbar */}
-            <div className=' rounded-sm p-3 flex justify-between items-center relative md:hidden bg-[#fff9f8]'>
+            <div className=' rounded-sm p-3 flex justify-between items-center relative md:hidden bg-[white]'>
                 <div className='flex gap-1 items-center'>
                     <figure className='w-[40px]'>
                         <Link to='/'>
@@ -33,7 +33,7 @@ function Header() {
                     </span>
                 </div>
 
-                <div className={toggle ? `absolute left-0 top-[100%] w-full h-screen  transition-all duration-300  md:hidden ` : 'absolute -left-[100%] w-full h-screen transition-all duration-300 top-[100%] md:hidden  '}>
+                <div className={toggle ? ` bg-[#f6f6fb] absolute left-0 top-[100%] w-full h-screen  transition-all duration-300  md:hidden ` : 'bg-[#f6f6fb] absolute -left-[100%] w-full h-screen transition-all duration-300 top-[100%] md:hidden  '}>
                     <MobileNav toggle={toggle} setToggle={setToggle} />
                 </div>
 
@@ -42,7 +42,7 @@ function Header() {
             {/* Mid screen+ navbar */}
 
             <div className='hidden md:flex w-full p-3 flexx justify-center  '>
-                <div className='max-w-[1800px]  bg-[#fefafa] flex justify-between w-[97%]  p-2 rounded-[3px]'>
+                <div className='max-w-[1800px]  bg-[white] flex justify-between w-[97%]  p-2 rounded-[3px]'>
                     <div className='flex gap-2 items-center'>
                         <figure className='w-[50px]'>
                             <img src={logo} alt="" />

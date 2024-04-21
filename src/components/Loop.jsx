@@ -26,12 +26,12 @@ function Loop() {
     // }
 
     return (
-    <div className='rounded-[5px] w-[98%] md:w-[97%] h-min md:mt-10  overflow-hidden  text-white '>
+    <div className='rounded-[5px] w-[98%] md:w-[97%] h-min md:mt-10  overflow-hidden   text-[#07081c] '>
         <div className="content flex w-full transition-all duration-1000 ease-in-out  " style={{transform: `translateX(-${slide * 100}%)`}}>
             {
                 arr.map((el,index)=>{
                     return <div key={index} className='w-full shrink-0 md:flex md:justify-center  md:pt-3  '>
-                        <figure className=' w-full flex flex-col items-center md:flex-row md:w-[98%]  border border-[#ffffff3a] lg:justify-around rounded-[5px]  shadow-black shadow-lg bg-[#0b0c1f]'>
+                        <figure className=' w-full flex flex-col items-center md:flex-row md:w-[98%]  border border-[#ffffff3a] lg:justify-around rounded-[5px]  shadow-lg shadow-[#65646411] bg-[white]'>
                             <img className='w-full md:w-[80%] lg:w-[42%] xl:w-[40%]' src={el.img} alt="" />
                             <div className=' w-[90%]  lg:w-1/2 xl:w-[50%] py-2'>
                             <figcaption className='font-bold text-xl  mb-4  z-10 sm:text-3xl text-[#E45826] xl:text-5xl '>{el.title}</figcaption>
