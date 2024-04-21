@@ -13,7 +13,7 @@ import SinglePage from './pages/SinglePage'
 function App() {
 
   return (
-    <div className='flex justify-center w-full  bg-[#07081c]'>
+    <div className='flex justify-center w-full  bg-[#f6f6fb]'>
 
 
       <div className='w-full max-w-[1800px] '>

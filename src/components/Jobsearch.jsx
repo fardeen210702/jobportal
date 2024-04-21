@@ -23,10 +23,10 @@ function Jobsearch({drag}) {
         </div>
         
          <div className='w-[98%] py-2 flex flex-col items-center gap-2'>
-            <h1 className='text-xl sm:text-2xl font-semibold text-white text'> Get hired with Job Portal!</h1>
+            <h1 className='text-xl sm:text-2xl font-semibold text-[#07081c] text'> Get hired with Job Portal!</h1>
             <div className='w-full flex justify-center gap-2 sm:gap-10 '>
                 {['100+ Job openings','150+ organisations' , '5LPA avg package'].map((el,id)=>{
-                    return <p  key={id} className='text-white text-sm sm:text-lg font-semibold text-center '> {el}</p>
+                    return <p  key={id} className='text-[#07081c] text-sm sm:text-lg font-semibold text-center '> {el}</p>
 
                     
                 })}
@@ -35,7 +35,7 @@ function Jobsearch({drag}) {
         </div>
 
         <div className='w-full flex justify-center'>
-            <div className='w-[98%] sm:w-[60%] lg:w-[45%] lg:p-3 sm:p-2 flex items-center border border-white rounded-[4px] bg-white'>
+            <div className='w-[98%] sm:w-[60%] lg:w-[45%] lg:p-3 sm:p-2 flex items-center border-[#00000018] border md:shadow-md md:shadow-[#57575711] rounded-[4px] bg-white'>
 
             <Search/>
             </div>

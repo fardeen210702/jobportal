@@ -11,7 +11,7 @@
     background-color: #07081c;
     /* #E45826 orange */
     /* darkblue */
-    /* background-color: #0b0c1f   ; */
+    /* background-color: #f6f6fb   ; */
     /* 141535 new bg color for card details */
 }
 .shape{
@@ -24,11 +24,11 @@
     text-shadow: 0 0 1px #E45826;
 }
 
-.colorImg{
+/* .colorImg{
    
         filter: invert(100%);
       
-}
+} */
 .orange-map{
     filter: grayscale(100%) contrast(0.2) brightness(0.8);
 }
