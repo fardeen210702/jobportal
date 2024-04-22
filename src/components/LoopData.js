@@ -18,7 +18,7 @@ import netlfix from '../assets/netflix.png'
     },
     {
         title:'Discover Endless Opportunities: Your Next Career Awaits Here!',
-        description:"Explore a multitude of career options on our platform. Your next big break starts here! Begin your quest for professional fulfillment today. Join us and turn your ambitions into achievements. Find your path to success with ease. Explore, apply, and embark on your next great adventure",
+        description:"Explore a multitude of career options on our platform. Your next big break starts here! Begin your quest for professional fulfillment today. Join us and turn your ambitions into achievements. Find your path to success with ease. All the best from Job Portal on your journey",
         img:img2,
 
     }

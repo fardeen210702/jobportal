@@ -38,6 +38,7 @@ function Jobsearch({drag}) {
             <div className='w-[98%] sm:w-[60%] lg:w-[45%] lg:p-3 sm:p-2 flex items-center border-[#00000018] border md:shadow-md md:shadow-[#57575711] rounded-[4px] bg-white'>
 
             <Search/>
+            
             </div>
         </div>
         

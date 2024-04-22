@@ -7,9 +7,10 @@ import Card from './Card'
 function AllJobs() {
     const { jobs } = useGlobalContext();
     const [showJobs, setShowJobs] = useState([])
-    const [isLoading, setISLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
+        setIsLoading(true)
         setShowJobs(jobs.slice(0, 9))
     }, [jobs])
 
@@ -30,7 +31,7 @@ function AllJobs() {
 
     function loadMoreData() {
         if (!isLoading) {
-            setISLoading(true);
+            setIsLoading(true);
             setTimeout(() => {
                 const jobsLength = showJobs.length;
                 const additionalJobLength = jobs.slice(
@@ -38,7 +39,7 @@ function AllJobs() {
                     jobsLength + 9
                 )
                 setShowJobs((prev) => [...prev, ...additionalJobLength])
-                setISLoading(false)
+                setIsLoading(false)
 
             }, 1000);
 
