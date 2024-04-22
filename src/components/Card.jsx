@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import load from '../assets/load.svg'
 import { FaRegBookmark , FaBookmark } from "react-icons/fa6";
 import { useGlobalContext } from '../contexts/Maincontext';
@@ -6,6 +6,11 @@ import { useGlobalContext } from '../contexts/Maincontext';
 function Card( el ) {
     const { job_title, employer_name, employer_logo, job_city, job_country, job_employment_type, job_is_remote,job_required_experience  } = el
     const {handleScrollToTop} = useGlobalContext()
+
+    useEffect(() => {
+      
+    }, [])
+    
 
     return (
         
@@ -33,7 +38,7 @@ function Card( el ) {
 
                     <h1 className='lowercase bg-[#80808045] py-1 px-2 rounded-[20px] text-sm text-gray-500 '> {
                         job_is_remote ? 'remote' : job_employment_type}</h1>
-                        <h1 className='bg-[#80808045] py-1 px-2 rounded-[20px] text-sm text-gray-500 hidden md:flex'>
+                        <h1 className='bg-[#80808045] py-1 px-2 rounded-[20px] text-sm text-gray-500 '>
                             { job_required_experience.experience_mentioned == true ? Math.floor(job_required_experience.required_experience_in_months / 12) : ''  }years exp...
                         </h1>
 

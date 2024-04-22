@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { companies } from '../components/LoopData'
-console.log(companies);
+// console.log(companies);
 
 
 function InfiniteScroller() {

@@ -4,7 +4,9 @@ function MaincontextReducer(state, action) {
     case 'JOBS':
         return {
             ...state,
-            jobs:action.payload
+            jobs:action.payload,
+            filteredJobs : [...action.payload],
+            copiedFilteredJobs:[...action.payload]
         }
     case 'COMPANY_NAME':
         let companies = action.payload.map((el)=>{
@@ -27,7 +29,7 @@ function MaincontextReducer(state, action) {
             androidDeveloper:androidDevelopers
         }
 
-   
+       
   
     default:
         return state
