@@ -18,7 +18,7 @@ function Header() {
 
         <div className=' fixed top-1 left-0 w-full z-[999]'>
             {/* mobile navbar */}
-            <div className=' rounded-sm p-3 flex justify-between items-center relative md:hidden bg-[white]'>
+            <div className=' rounded-sm p-3 flex justify-between items-center relative md:hidden bg-[#fff9f8]'>
                 <div className='flex gap-1 items-center'>
                     <figure className='w-[40px]'>
                         <Link to='/'>
