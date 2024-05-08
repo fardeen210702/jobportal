@@ -7,6 +7,7 @@ import Profile from './pages/Profile'
 import Contact from './pages/Contact'
 import InterviewQuestions from './pages/InterviewQuestions'
 import SinglePage from './pages/SinglePage'
+import Publishjobs from './pages/Publishjobs'
 
 
 
@@ -23,6 +24,7 @@ function App() {
             <Route path='/' element={<Home/>} />
             <Route path='/home' element={<Home/>} />
             <Route path='/jobs' element={<Jobs/>} />
+            <Route path='/publishjobs' element={<Publishjobs/>} />
             <Route path='/profile' element={<Profile/>} />
             <Route path='/contact' element={<Contact/>} />
             <Route path='/interviewquestions' element={<InterviewQuestions/>} />

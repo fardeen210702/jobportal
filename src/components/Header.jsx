@@ -2,9 +2,10 @@ import  {  useState } from 'react'
 import logo from '../assets/logo.svg'
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import MobileNav from './MobileNav';
+import { FaPlus } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
+import MobileNav from './MobileNav';
 
 
 function Header() {
@@ -18,7 +19,7 @@ function Header() {
 
         <div className=' fixed top-1 left-0 w-full z-[999]'>
             {/* mobile navbar */}
-            <div className=' rounded-sm p-3 flex justify-between items-center relative md:hidden bg-[#fff9f8]'>
+            <div className=' rounded-sm p-3 flex justify-between items-center relative md:hidden bg-[white]'>
                 <div className='flex gap-1 items-center'>
                     <figure className='w-[40px]'>
                         <Link to='/'>
@@ -53,17 +54,20 @@ function Header() {
                     </div>
 
                     <div className='flex  items-center gap-2'>
-                        <ul className='flex gap-4 mr-2 font-semibold uppercase cursor-pointer  text-[#0b0c1f]'>
+                        <ul className='flex gap-4 items-center mr-2 font-semibold text-lg  cursor-pointer  text-[#0b0c1f]'>
                             <Link to='/jobs'>
                             <li className='hover:text-[#E45826]'>Jobs</li>
                             </Link>
                             
                             <Link to='/interviewquestions'>
-                            <li  className='hover:text-[#E45826]'>interview prep</li>
+                            <li  className='hover:text-[#E45826]'>Interview prep</li>
+                            </Link>
+                            <Link to='/publishjobs'>
+                            <li  className='hover:text-[#E45826] text-[#4b4b4b] hover:border-[#E45826] border rounded-md border-[#6b6a6a65] flex items-center gap-2 px-1 py-2 transition-all duration-150'>Add job <FaPlus className='text-xl'/> </li>
                             </Link>
 
                             <Link to='/profile'>
-                            <li  className='hover:text-[#E45826] text-2xl text-[gray]'><FaUserCircle/></li>
+                            <li  className='hover:text-[#E45826] text-3xl text-[gray]'><FaUserCircle/></li>
                             </Link>
                         </ul>
                         {/* <div className="logins flex gap-2">
