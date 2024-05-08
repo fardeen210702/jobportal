@@ -12,13 +12,13 @@ import netlfix from '../assets/netflix.png'
  const arr = [
     {
         title:'Unlock Your Career Potential: Find Your Dream Job Today',
-        description:"Discover a world of opportunity with our job portal. Your dream career awaits! Start your journey to success now. Let's make your aspirations a reality. Join us and take the first step towards your future. Seize the opportunity and transform your career trajectory today",
+        description:"Uncover a realm of opportunities with our Job portal. Your desired career awaits! Initiate your journey to success now. Let's manifest your dreams. Join us and take the first step towards your future. Seize the chance to reshape your career path today.",
         img:img1,
 
     },
     {
         title:'Discover Endless Opportunities: Your Next Career Awaits Here!',
-        description:"Explore a multitude of career options on our platform. Your next big break starts here! Begin your quest for professional fulfillment today. Join us and turn your ambitions into achievements. Find your path to success with ease. All the best from Job Portal on your journey",
+        description:"Explore myriad career paths on our platform. Your next significant opportunity starts here! Begin your pursuit of professional fulfillment today. Partner with us and realize your ambitions. Best wishes from Job Portal as you navigate your journey.",
         img:img2,
 
     }

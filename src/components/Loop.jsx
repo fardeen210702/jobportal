@@ -8,7 +8,7 @@ function Loop() {
         let scroll = setInterval(() => {
         setSlide((prev) => prev===arr.length-1 ? 0 : prev+1)    
             
-        }, 3000);
+        }, 5000);
 
         return ()=>{
             clearInterval(scroll)
@@ -31,8 +31,8 @@ function Loop() {
             {
                 arr.map((el,index)=>{
                     return <div key={index} className='w-full shrink-0 md:flex md:justify-center  md:pt-3  '>
-                        <figure className=' w-full flex flex-col items-center md:flex-row md:w-[98%]  border border-[#ffffff3a] lg:justify-around rounded-[5px]  shadow-lg shadow-[#65646411] bg-[white] '>
-                            <img className='w-full md:w-[80%] lg:w-[42%] xl:w-[40%] ' src={el.img} alt="" />
+                        <figure className=' w-full flex flex-col items-center md:flex-row md:w-[98%]  border border-[#ffffff3a] lg:justify-around rounded-[5px]   shadow-lg shadow-[#65646411] bg-[white] '>
+                            <img className='w-full md:w-[80%] lg:w-[42%] xl:w-[40%] h-[300px] sm:h-min object-contain ' src={el.img} alt="" />
                             <div className=' w-[90%]  lg:w-1/2 xl:w-[50%] py-2'>
                             <figcaption className='font-bold text-xl  mb-4  z-10 sm:text-3xl text-[#E45826] xl:text-5xl '>{el.title}</figcaption>
                             <figcaption className='xl:text-xl' >{el.description}</figcaption>

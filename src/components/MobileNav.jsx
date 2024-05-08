@@ -14,6 +14,9 @@ function MobileNav({toggle , setToggle}) {
                 <Link  to='/jobs'>
                     <li className='p-3'>Jobs</li>
                 </Link>
+                <Link  to='/publishjobs'>
+                    <li className='p-3'>Add Job</li>
+                </Link>
                 <Link  to='/contact'>
                     <li className='p-3'>Contact</li>
                 </Link>
