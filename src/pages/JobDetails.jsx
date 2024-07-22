@@ -5,15 +5,15 @@ import Product from '../components/Product';
 
 function SinglePage() {
   const { jobs } = useGlobalContext()
-  console.log(jobs, "global jobs");
+  // console.log(jobs, "global jobs");
   const id = useParams()
-  console.log(id, "parameter id ");
+  // console.log(id, "parameter id ");
 
 
 
 
   return (
-    <div className='bg-[#07081c] w-full flex justify-center '>
+    <div className=' w-full flex justify-center '>
       <div className='w-[98%] md:w-[95%] mt-20 md:mt-24 '>
 
         {

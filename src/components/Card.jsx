@@ -38,9 +38,15 @@ function Card( el ) {
 
                     <h1 className='lowercase bg-[#80808045] py-1 px-2 rounded-[20px] text-sm text-gray-500 '> {
                         job_is_remote ? 'remote' : job_employment_type}</h1>
-                        <h1 className='bg-[#80808045] py-1 px-2 rounded-[20px] text-sm text-gray-500 '>
-                            { job_required_experience.experience_mentioned == true ? Math.floor(job_required_experience.required_experience_in_months / 12) : ''  }years exp...
-                        </h1>
+
+
+                       { job_required_experience.experience_mentioned == true ?(<h1 className='bg-[#80808045] py-1 px-2 rounded-[20px] text-sm text-gray-500 '>{job_required_experience.required_experience_in_months / 12 + 'years exp...'}</h1>):(<h1 className='bg-[#80808045] py-1 px-2 rounded-[20px] text-sm text-gray-500 '  >{'fresher'}</h1>) }
+
+
+
+                        {/* <h1 className='bg-[#80808045] py-1 px-2 rounded-[20px] text-sm text-gray-500 '>
+                            { job_required_experience.experience_mentioned == true ? Math.floor(job_required_experience.required_experience_in_months / 12)+'years exp...' : ''  }
+                        </h1> */}
 
 
                         <h1 className=' text-md'> <FaRegBookmark/></h1>
