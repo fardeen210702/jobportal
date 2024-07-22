@@ -16,11 +16,11 @@ function Maincontext({ children }) {
   try {
       const res  = await fetch(url)
       const data = await res.json()
-      console.log(data,'fetching data');
+    //  console.log(data,'fetching data');
       dispatch({type:'JOBS', payload: data})
 
   } catch (error) {
-    console.log('error', error);
+    // console.log('error', error)j;
   }
 
   }
