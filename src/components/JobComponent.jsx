@@ -17,7 +17,7 @@ function JobComponent() {
                 <h1 className='text-2xl lg:text-3xl font-bold text-[#E45826] uppercase'> Unlock a World of Diverse Opportunities </h1>
                 <p className='text-gray-700 text-lg lg:text-xl'> Unleash your potential, explore diverse opportunities, and navigate towards success with confidence</p>
                 <Link to='/jobs'>
-                    <button className='w-[140px] hover:bg-[#E45826] transition-all duration-300 hover:text-white p-3 text-xl font-semibold text-black rounded-sm border-[#E45826] border'> Search Jobs</button>
+                    <button className='w-fit hover:bg-[#E45826] transition-all duration-300 hover:text-white p-3 text-xl font-semibold text-black rounded-sm border-[#E45826] border'> Search Jobs</button>
                 </Link>
             </div>
 

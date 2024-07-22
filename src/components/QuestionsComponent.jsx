@@ -10,7 +10,7 @@ function QuestionsComponent() {
         <h1 className='text-2xl lg:text-3xl font-bold text-[#E45826] uppercase'> Preparing for Success: Strategies for Nailing Your Interview </h1>
         <p className='text-gray-700 text-lg lg:text-xl'> Equip yourself with knowledge, practice, and confidence to conquer your upcoming interview and land your dream opportunity </p>
         <Link to='/profile'>
-        <button className='w-[190px] hover:bg-[#E45826] transition-all duration-300 hover:text-white p-3 text-xl font-semibold text-black rounded-sm border-[#E45826] border'> Start preparation</button>
+        <button className='w-fit hover:bg-[#E45826] transition-all duration-300 hover:text-white p-3 text-xl font-semibold text-black rounded-sm border-[#E45826] border'> Start preparation</button>
         </Link>
     </div>
 

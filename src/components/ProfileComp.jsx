@@ -11,7 +11,7 @@ function ProfileComp() {
             <h1 className='text-2xl lg:text-3xl font-bold text-[#E45826]'> BUILD A STRONG PROFILE TO STANDOUT </h1>
             <p className='text-gray-700 text-lg lg:text-xl'> Make a strong impression infront of Employers by creating extraordinary profiles </p>
             <Link to='/profile'>
-            <button className='w-[140px] hover:bg-[#E45826] transition-all duration-300 hover:text-white p-3 text-xl font-semibold text-black rounded-sm border-[#E45826] border'> Build Profile</button>
+            <button className='w-fit hover:bg-[#E45826] transition-all duration-300 hover:text-white p-3 text-xl font-semibold text-black rounded-sm border-[#E45826] border'> Build Profile</button>
             </Link>
         </div>
 

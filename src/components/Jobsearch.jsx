@@ -17,7 +17,7 @@ function Jobsearch({drag}) {
         <div className=' w-[98%] md:w-[95%]'>
            <div className='text-white flex flex-wrap gap-2 items-center justify-center bg-[#7EA1FF] rounded-[4px] py-2'>
            <h1 className='font-semibold text-center'> Unleash opportunities! Fresh grads or seasoned pros, find your next challenge in our job listings now! </h1> 
-           <button className='w-[100px]  hover:bg-[#93a6d8] transition-all duration-300 hover:text-white p-2 text-sm font-semibold text-[white]  rounded-sm border-[#ffffffd5] md:border-[#ffffff48] border-2 ' onClick={()=>handleDrag(drag)} >Explore jobs</button>
+           <button className='w-fit  hover:bg-[#4d7ef8] transition-all duration-300 hover:text-white p-2 text-sm font-semibold text-[white]  rounded-sm border-[#ffffffd5] md:border-[#ffffff48] border-2 ' onClick={()=>handleDrag(drag)} >Explore jobs</button>
            </div>
         
         </div>
