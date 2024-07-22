@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FaShoppingBag, FaRegCheckCircle,FaCity ,FaFlag  } from "react-icons/fa";
+import { FaShoppingBag, FaRegCheckCircle, FaCity, FaFlag } from "react-icons/fa";
 import { MdAdminPanelSettings } from "react-icons/md";
 import load from '../assets/load.svg'
 
@@ -24,20 +24,20 @@ function Product(el) {
 
 
     // let newMonth = month < 10 ? '0'+month : month;
-    
-    
+
+
     let date = newDay.getDate()
-    let newDate = date < 10 ? '0'+date : date;
+    let newDate = date < 10 ? '0' + date : date;
 
     let job_posted_on = `${newDate} ${months[Number(month)]}, ${year}`;
 
-    
+
 
     //expiration date
     let expDay = new Date(job_offer_expiration_datetime_utc)
     let expYear = expDay.getFullYear();
     let expMonth = expDay.getMonth()
-    
+
     let expNewDate = expDay.getDate()
     let job_expires_on = `${expNewDate} ${months[Number(expMonth)]},${expYear}`;
     console.log(job_expires_on);
@@ -55,7 +55,7 @@ function Product(el) {
 
 
     return (<>
-        <div className='w-full flex flex-col  p-1 bg-white  shadow-md'>
+        <div className='w-full flex flex-col border   py-1 px-3 bg-white  shadow-md'>
             <div className="employerdetails">
                 <div className='employer flex items-center gap-2'>
 
@@ -71,73 +71,87 @@ function Product(el) {
             <div>
                 {/* employer details */}
 
-                {employer_website && <h1 className='underline text-blue-800 font-semibold'>{employer_website}</h1> }
+                {employer_website && <h1 className='underline text-blue-800 font-semibold'>{employer_website}</h1>}
 
                 {
                     job_title.length > 38 ? <h1 className='font-semibold'>{job_title.substring(0, 38)}...</h1> : <h1 className='font-semibold'>{job_title}</h1>
 
                 }
 
+            </div>
+            {/* location and experience */}
+            <div className='employementdetails  flex flex-wrap  items-center gap-2 my-2'>
 
-                {/* locatio and experience */}
-                <div className='employementdetails  flex flex-wrap  items-center gap-2 my-2'>
-
-                    {
-                        job_is_remote === true && (<h1 className='flex items-center font-semibold gap-1  w-min bg-gray-200  p-2 border border-gray-400 rounded-md capitalize'> <IoLocationSharp /> remote</h1>)
-
-                    }
-                    {
-                        job_country && <h1 className='flex items-center font-semibold gap-1  w-fit bg-gray-200  p-2 border border-gray-400 rounded-md capitalize'> <FaFlag  /> {job_country}</h1>
-                    }
-                    {
-                        job_city && <h1 className='flex items-center font-semibold gap-1  w-fit bg-gray-200  p-2 border border-gray-400 rounded-md capitalize'> <FaCity  /> {job_city}</h1>
-                    }
-                    {
-                        job_employment_type && <h1 className=' w-min bg-gray-200  p-2 border border-gray-400 rounded-md lowercase font-semibold  '>{job_employment_type}</h1>
-                    }
-
-                    {
-                        job_required_experience.experience_mentioned === true ? <h1 className='bg-gray-200  p-2 border border-gray-400 rounded-md  font-semibold flex items-center gap-2 capitalize'> <FaShoppingBag/> {(job_required_experience.required_experience_in_months / 12)}    years</h1> : <h1 className='bg-gray-200  p-2 border border-gray-400 rounded-md  font-semibold capitalize'> fresher</h1>
-                    }
-                </div>
-                {/* <hr className='my-4' /> */}
-
-
-                {/* skills */}
                 {
-                    job_required_skills && <div className="job_required_skills flex-col flex gap-2 "> <p className='font-semibold'>Skills</p>
-                        <div className='flex flex-wrap gap-2'>
-                            {splitText.map((el, id) => {
-                                return <p key={id} className='capitalize bg-gray-200  p-2 border border-gray-400 rounded-md font-semibold'>{el}</p>
-                            })}</div>
-                    </div>
+                    job_is_remote === true && (<h1 className='flex items-center font-semibold gap-1  w-min bg-gray-200  p-2 border border-gray-400 rounded-md capitalize'> <IoLocationSharp /> remote</h1>)
+
+                }
+                {
+                    job_country && <h1 className='flex items-center font-semibold gap-1  w-fit bg-gray-200  p-2 border border-gray-400 rounded-md capitalize'> <FaFlag /> {job_country}</h1>
+                }
+                {
+                    job_city && <h1 className='flex items-center font-semibold gap-1  w-fit bg-gray-200  p-2 border border-gray-400 rounded-md capitalize'> <FaCity /> {job_city}</h1>
+                }
+                {
+                    job_employment_type && <h1 className=' w-min bg-gray-200  p-2 border border-gray-400 rounded-md lowercase font-semibold  '>{job_employment_type}</h1>
+                }
+
+                {
+                    job_required_experience.experience_mentioned === true ? <h1 className='bg-gray-200  p-2 border border-gray-400 rounded-md  font-semibold flex items-center gap-2 capitalize'> <FaShoppingBag /> {(job_required_experience.required_experience_in_months / 12)}    years</h1> : <h1 className='bg-gray-200  p-2 border border-gray-400 rounded-md  font-semibold capitalize'> fresher</h1>
+                }
+            </div>
+
+
+            {/* skills */}
+            {
+                job_required_skills && <div className="job_required_skills flex-col flex gap-2 my-3 "> <p className='font-semibold'>Skills</p>
+                    <div className='flex flex-wrap gap-2'>
+                        {splitText.map((el, id) => {
+                            return <p key={id} className='capitalize bg-gray-200  p-2 border border-gray-400 rounded-md font-semibold'>{el}</p>
+                        })}</div>
+                </div>
+
+            }
+
+            {/* job posting and expiration dates */}
+
+            <div className='flex flex-col gap-2 my-3'>
+                {
+                    job_posted_at_datetime_utc && <p className='bg-gray-200  p-2 border border-gray-400 rounded-md  font-semibold w-fit capitalize' >Job Posted on : {job_posted_on}</p>
+                }
+                {
+                    job_offer_expiration_datetime_utc && <>
+                        {currentDate > newExpDate ? <p className='postexp bg-gray-100 text-red-500   p-2 border border-gray-200 rounded-md  font-semibold w-fit capitalize'>job not avaliable</p>
+                            : <p className='postexp bg-gray-200 text-red-500   p-2 rounded-md  font-semibold border border-gray-400 w-fit capitalize'>Job Expires on {job_expires_on}</p>
+
+                        }
+                    </>
 
                 }
 
-                <hr className='my-4 ' />
-
-                {/* job posting and expiration dates */}
-
-                <div className='flex flex-col gap-2'>
-                    {
-                        job_posted_at_datetime_utc && <p className='bg-gray-200  p-2 border border-gray-400 rounded-md  font-semibold w-fit capitalize' >Job Posted on : {job_posted_on}</p>
-                    }
-                    {
-                        job_offer_expiration_datetime_utc && <>
-                            {currentDate > newExpDate ? <p className='postexp bg-gray-100 text-red-500   p-2 border border-gray-200 rounded-md  font-semibold w-fit capitalize'>job not avaliable</p>
-                            : <p className='postexp bg-gray-200 text-red-500   p-2 rounded-md  font-semibold border border-gray-400 w-fit capitalize'>Job Expires on {job_expires_on}</p>
-                            
-                        }
-                        </>
-
-                    }
-                    
-            
-
-                </div>
 
 
             </div>
+
+            {/* job apply link */}
+            <div className='jobapplication my-3 flex gap-3'>
+                {
+                    job_offer_expiration_datetime_utc ? <>
+                        { newExpDate < currentDate ? (<button className='cursor-not-allowed w-fit hover:bg-white bg-[#E45826] transition-all duration-300 hover:text-black py-2  px-5 text-lg font-semibold text-gray-200 rounded-md border-gray-400 border hover:border-[#E45826]'  disabled>Apply</button>)
+                        : 
+                        (<a href={job_apply_link} className='w-fit hover:bg-white bg-[#E45826] transition-all duration-300 hover:text-black py-2  px-5 text-lg font-semibold text-gray-200 rounded-md border-gray-400 border hover:border-[#E45826]'  target='_blank'>Apply Job</a>)
+                        }
+                    </> :(<a href={job_apply_link} className='w-fit hover:bg-white bg-[#E45826] transition-all duration-300 hover:text-black py-2  px-5 text-lg font-semibold text-gray-200 rounded-md border-gray-400 border hover:border-[#E45826]' target='_blank'>Apply Job</a>)
+
+                }
+                <button className='w-fit hover:bg-white bg-[#E45826] transition-all duration-300 hover:text-black py-2  px-5 text-lg font-semibold text-gray-200 rounded-md border-gray-400 border hover:border-[#E45826]'> Save Job</button>
+
+            </div>
+
+
+
+
+
 
 
         </div>
