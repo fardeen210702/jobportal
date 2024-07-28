@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import InterviewQuestions from './pages/InterviewQuestions'
 import Publishjobs from './pages/Publishjobs'
 import JobDetails from './pages/JobDetails'
+// import SavedJobs from './pages/SavedJobs'
 
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route path='/publish-jobs' element={<Publishjobs/>} />
             <Route path='/profile' element={<Profile/>} />
             <Route path='/contact' element={<Contact/>} />
+            {/* <Route path='/savedjobs' element={<SavedJobs/>} /> */}
             <Route path='/interview-questions' element={<InterviewQuestions/>} />
             <Route path='/job-details/:id' element={<JobDetails/>} />
           </Routes>

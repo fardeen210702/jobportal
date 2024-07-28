@@ -1,6 +1,5 @@
 import {useEffect, useState } from 'react'
 import { useGlobalContext } from '../contexts/Maincontext'
-
 import { Link } from 'react-router-dom'
 import Loading from '../components/Loading'
 import Card from './Card'
@@ -9,7 +8,7 @@ function AllJobs() {
     const { jobs } = useGlobalContext();
     const [showJobs, setShowJobs] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    console.log(jobs);
+    // console.log(jobs);
 
     useEffect(() => {
         

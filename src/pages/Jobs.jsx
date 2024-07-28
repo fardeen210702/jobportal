@@ -16,7 +16,7 @@ if(loader ==='false'){
   setTimeout(()=>{
     setFlag(false)
     sessionStorage.setItem('loading-page','false')
-   },5000)
+   },1000)
 }
 
 window.addEventListener('beforeunload',()=>{
