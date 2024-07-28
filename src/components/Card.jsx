@@ -7,9 +7,7 @@ function Card( el ) {
     const { job_title, employer_name, employer_logo, job_city, job_country, job_employment_type, job_is_remote,job_required_experience  } = el
     const {handleScrollToTop} = useGlobalContext()
 
-    useEffect(() => {
-      
-    }, [])
+   
     
 
     return (

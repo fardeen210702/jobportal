@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaEllo } from 'react-icons/fa6';
 
 function FilterContextReducer(state, action) {
     switch (action.type) {
@@ -20,7 +19,7 @@ function FilterContextReducer(state, action) {
                 
             }
 
-            case 'MANIPULATING_DATA_BY_TEXT':
+            case 'SEARCH_QUERY':
                 const {copiedFilteredJobs} = state;
                 let newCopiedList = [...copiedFilteredJobs];
                 let {text} = state.filters;
@@ -30,11 +29,14 @@ function FilterContextReducer(state, action) {
                     return el.job_title.toLowerCase().includes(text)
                 })
             }
+            
             return {
                 ...state,
                 filteredJobs:newCopiedList
+                
             }
 
+            
         default:
             return state;
     }

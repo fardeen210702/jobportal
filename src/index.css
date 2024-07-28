@@ -8,6 +8,7 @@
   font-family:'Poppins','sans-serif';
 }
 
+
 .bgColor{
     background-color: #07081c;
     /* #E45826 orange */
@@ -64,7 +65,9 @@
     animation: all 0.9s linear infinite;
 
   }
+
   @keyframes all {
     0%,100% { color: red; }
     50%{ color: rgb(184, 176, 176); }
   }
+

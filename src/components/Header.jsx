@@ -54,10 +54,11 @@ function Header() {
                     </div>
 
                     <div className='flex  items-center gap-2'>
-                        <ul className='flex gap-4 items-center mr-2 font-semibold text-lg  cursor-pointer  text-[#0b0c1f]'>
+                        <ul className='flex gap-4 items-center mr-2 font-medium text-md cursor-pointer  text-[#0b0c1f]'>
                             <Link to='/jobs'>
                             <li className='hover:text-[#E45826]'>Jobs</li>
                             </Link>
+                            
                             
                             <Link to='/interviewquestions'>
                             <li  className='hover:text-[#E45826]'>Interview prep</li>

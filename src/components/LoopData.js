@@ -9,6 +9,10 @@ import uber from '../assets/ubersvg.svg'
 import unbounce from '../assets/unbounce.png'
 import netlfix from '../assets/netflix.png'
 
+/***
+ * What does, this files do ?,
+ * Where is it used.
+ */
  const arr = [
     {
         title:'Unlock Your Career Potential: Find Your Dream Job Today',
