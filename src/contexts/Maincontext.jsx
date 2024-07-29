@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer,useState } from "react";
 // import jobData from '../data/Data' 
 import reducer from "./MaincontextReducer";
 const Data = createContext()
@@ -34,8 +34,38 @@ window.scrollTo(0,0)
 }
 
 
+// session relaoding 
+
+const [flag,setFlag] = useState(true)
+
+
+useEffect(()=>{
+let loader =sessionStorage.getItem('loading-page');
+if(loader ==='false'){
+setFlag(false)
+}else{
+setTimeout(()=>{
+  setFlag(false)
+  sessionStorage.setItem('loading-page','false')
+ },3000)
+}
+
+window.addEventListener('beforeunload',()=>{
+sessionStorage.setItem( 'loading-page','true')
+})
+
+return ()=>{
+window.removeEventListener('beforeunload',()=>{
+  sessionStorage.setItem( 'loading-page','true')
+})
+
+}
+
+
+},[flag])
+
     return (
-        <Data.Provider value={{...state , handleScrollToTop}}>
+        <Data.Provider value={{...state , handleScrollToTop , flag}}>
             {children}
         </Data.Provider>
     )

@@ -1,5 +1,5 @@
 import img1 from '../assets/caht2.png'
-import img2 from '../assets/chat.png'
+import img2 from '../assets/chat.svg'
 import microsoft from '../assets/microsoft.png'
 import criteo from '../assets/criteo.png'
 import flite from '../assets/flite.png'
@@ -21,7 +21,7 @@ import netlfix from '../assets/netflix.png'
 
     },
     {
-        title:'Discover Endless Opportunities: Your Next Career Awaits Here!',
+        title:'Discover New Opportunities: Your Next Career Awaits Here!',
         description:"Explore myriad career paths on our platform. Your next significant opportunity starts here! Begin your pursuit of professional fulfillment today. Partner with us and realize your ambitions. Best wishes from Job Portal as you navigate your journey.",
         img:img2,
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { usePostDataContext } from '../contexts/PostContext'
+import { usePostDataContext } from '../../contexts/PostContext'
 function Publishjobs() {
     const {name,email,employer_name,employer_logo,employer_website,job_title,job_apply_link,job_country,job_city,job_employment_type,job_is_remote_yes , job_is_remote_no , job_max_salary,job_min_salary,job_posted_at_datetime_utc,job_offer_expiration_datetime_utc,job_required_experience,job_required_skills,job_description,job_responsibilities,job_benefits,job_qualifications , handleChange , handlesubmit} = usePostDataContext()
 
