@@ -21,7 +21,7 @@ function FilterContext({ children }) {
     dispatch({ type: 'FILTERED_DATA', payload: jobs })
 
   }, [jobs])
-console.log(state.filteredJobs);
+// console.log(state.filteredJobs);
 
   // useEffect(() => {
   //   dispatch({type:'MANIPULATING_DATA_BY_TEXT'})

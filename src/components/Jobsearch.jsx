@@ -29,7 +29,7 @@ function Jobsearch({ drag }) {
             <div className='w-[98%] py-2 flex flex-col items-center gap-2'>
                 <h1 className='text-xl sm:text-2xl font-semibold text-[#07081c] text'> Get hired with Job Portal!</h1>
                 <div className='w-full flex justify-center gap-2 sm:gap-10 '>
-                    {['100+ Job openings', '150+ organisations', '5LPA avg package'].map((el, id) => {
+                    {['100+ Job openings', '150+ organisations', '3LPA avg package'].map((el, id) => {
                         return <p key={id} className='text-[#07081c] text-sm sm:text-lg font-semibold text-center '> {el}</p>
 
 

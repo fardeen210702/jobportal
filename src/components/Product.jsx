@@ -11,6 +11,7 @@ import load from "../assets/load.svg";
 import { IoAlertCircleOutline, IoLocationSharp } from "react-icons/io5";
 
 function Product(el) {
+  const [fullScreen, setFullScreen] = useState(false)
   const {
     job_id,
     job_title,
@@ -31,6 +32,7 @@ function Product(el) {
     job_job_title,
     job_offer_expiration_datetime_utc,
     job_description,
+
   } = el;
   // console.log(el);
 
@@ -56,9 +58,6 @@ function Product(el) {
   let newDay = new Date(job_posted_at_datetime_utc);
   let year = newDay.getFullYear();
   let month = newDay.getMonth();
-  // console.log(typeof month);
-
-  // let newMonth = month < 10 ? '0'+month : month;
 
   let date = newDay.getDate();
   let newDate = date < 10 ? "0" + date : date;
@@ -72,17 +71,18 @@ function Product(el) {
 
   let expNewDate = expDay.getDate();
   let job_expires_on = `${expNewDate} ${months[Number(expMonth)]},${expYear}`;
-  // console.log(job_expires_on);
 
   let newExpDate = new Date(job_expires_on);
-  // console.log(newExpDate);
 
   let currentDate = new Date();
 
-  return (
+  let jobType =
+    job_employment_type.toLowerCase().charAt(0).toUpperCase() +
+    job_employment_type.slice(1).toLowerCase(); //capitalizing the string
 
-    <>
-      <div className="w-full flex flex-col border   py-1 px-3 bg-white  shadow-md">
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="w-full flex flex-col border rounded-sm   py-1 px-3 bg-white  shadow-md">
         <div className="employerdetails">
           <div className="employer flex items-center gap-2">
             <figure className="w-[50px] h-[50px]  ">
@@ -111,51 +111,61 @@ function Product(el) {
           {/* employer details */}
 
           {employer_website && (
-            <h1 className="underline text-blue-800 font-semibold">
-              {employer_website}
-            </h1>
+            <a
+              href=""
+              target="_blank"
+              className=" px-1 underline text-blue-800 font-semibold text-sm"
+            >
+              Visit Website
+            </a>
           )}
-
-          {job_title.length > 38 ? (
-            <h1 className="font-semibold">{job_title.substring(0, 38)}...</h1>
-          ) : (
-            <h1 className="font-semibold">{job_title}</h1>
-          )}
+          <div className=" hidden md:flex">
+            <h1 className="font-semibold text-sm">{job_title}</h1>
+          </div>
+          <div className="visible md:hidden">
+            {job_title.length > 38 ? (
+              <h1 className="font-semibold text-sm">
+                {job_title.substring(0, 38)}...
+              </h1>
+            ) : (
+              <h1 className="font-semibold text-sm">{job_title}</h1>
+            )}
+          </div>
         </div>
         {/* location and experience */}
         <div className="employementdetails  flex flex-wrap  items-center gap-2 my-2">
           {job_is_remote === true && (
-            <h1 className="flex items-center font-semibold gap-1  w-min bg-gray-200  p-2 border border-gray-400 rounded-md capitalize">
+            <h1 className="flex items-center  gap-1 text-sm  w-min bg-gray-200  p-2 border border-gray-400 rounded-sm capitalize">
               {" "}
               <IoLocationSharp /> remote
             </h1>
           )}
           {job_country && (
-            <h1 className="flex items-center font-semibold gap-1  w-fit bg-gray-200  p-2 border border-gray-400 rounded-md capitalize">
+            <h1 className="flex items-center  gap-1 text-sm  w-fit bg-gray-200  p-2 border border-gray-400 rounded-sm capitalize">
               {" "}
               <FaFlag /> {job_country}
             </h1>
           )}
           {job_city && (
-            <h1 className="flex items-center font-semibold gap-1  w-fit bg-gray-200  p-2 border border-gray-400 rounded-md capitalize">
+            <h1 className="flex items-center  gap-1 text-sm  w-fit bg-gray-200  p-2 border border-gray-400 rounded-sm capitalize">
               {" "}
               <FaCity /> {job_city}
             </h1>
           )}
           {job_employment_type && (
-            <h1 className=" w-min bg-gray-200  p-2 border border-gray-400 rounded-md lowercase font-semibold  ">
-              {job_employment_type}
+            <h1 className=" w-min bg-gray-200 text-sm  p-2 border border-gray-400 rounded-sm  ">
+              {jobType}
             </h1>
           )}
 
           {job_required_experience.experience_mentioned === true ? (
-            <h1 className="bg-gray-200  p-2 border border-gray-400 rounded-md  font-semibold flex items-center gap-2 capitalize">
+            <h1 className="bg-gray-200 text-sm  p-2 border border-gray-400 rounded-sm   flex items-center gap-2 capitalize">
               {" "}
               <FaShoppingBag />{" "}
               {job_required_experience.required_experience_in_months / 12} years
             </h1>
           ) : (
-            <h1 className="bg-gray-200  p-2 border border-gray-400 rounded-md  font-semibold capitalize">
+            <h1 className="bg-gray-200  p-2 border border-gray-400 rounded-sm  text-sm capitalize">
               {" "}
               fresher
             </h1>
@@ -172,7 +182,7 @@ function Product(el) {
                 return (
                   <p
                     key={id}
-                    className="capitalize bg-gray-200  p-2 border border-gray-400 rounded-md font-semibold"
+                    className="capitalize bg-gray-200 text-sm  p-2 border border-gray-400 rounded-sm "
                   >
                     {el}
                   </p>
@@ -186,18 +196,18 @@ function Product(el) {
 
         <div className="flex flex-col gap-2 my-3">
           {job_posted_at_datetime_utc && (
-            <p className="bg-gray-200  p-2 border border-gray-400 rounded-md  font-semibold w-fit capitalize">
+            <p className="bg-gray-200  p-2 border border-gray-400 rounded-sm text-sm font-semibold w-fit capitalize">
               Job Posted on : {job_posted_on}
             </p>
           )}
           {job_offer_expiration_datetime_utc && (
             <>
               {currentDate > newExpDate ? (
-                <p className="postexp bg-gray-100 text-red-500   p-2 border border-gray-200 rounded-md  font-semibold w-fit capitalize">
+                <p className="postexp bg-gray-100 text-red-500  text-sm  p-2 border border-gray-200 rounded-sm  font-semibold w-fit capitalize">
                   job not avaliable
                 </p>
               ) : (
-                <p className="postexp bg-gray-200 text-red-500   p-2 rounded-md  font-semibold border border-gray-400 w-fit capitalize">
+                <p className="postexp bg-gray-200 text-red-500 text-sm  p-2 rounded-sm  font-semibold border border-gray-400 w-fit capitalize">
                   Job Expires on : {job_expires_on}
                 </p>
               )}
@@ -206,12 +216,12 @@ function Product(el) {
         </div>
 
         {/* job apply link */}
-        <div className="jobapplication my-3 flex gap-3">
+        <div className="jobapplication my-3 flex gap-3 items-center ">
           {job_offer_expiration_datetime_utc ? (
             <>
               {newExpDate < currentDate ? (
                 <button
-                  className="cursor-not-allowed w-fit hover:bg-white bg-[#E45826] transition-all duration-300 hover:text-black py-2  px-5 text-lg font-semibold text-gray-200 rounded-md border-gray-400 border hover:border-[#E45826]"
+                  className=" cursor-not-allowed w-fit border-[white] transition-all duration-300  py-2 px-4 text-sm sm:text-md font-semibold  rounded-sm  border  bg-[#E45826] hover:bg-white hover:border-[#E45826] text-white hover:text-black"
                   disabled
                 >
                   Apply Job
@@ -219,7 +229,7 @@ function Product(el) {
               ) : (
                 <a
                   href={job_apply_link}
-                  className="w-fit hover:bg-white bg-[#E45826] transition-all duration-300 hover:text-black py-2  px-5 text-md sm:text-lg font-semibold text-gray-200 rounded-md border-gray-400 hover:border hover:border-[#E45826]"
+                  className="w-fit border-[white] transition-all duration-300  py-2 px-4 text-sm sm:text-md font-semibold  rounded-sm  border  bg-[#E45826] hover:bg-white hover:border-[#E45826] text-white hover:text-black"
                   target="_blank"
                 >
                   Apply Job
@@ -229,132 +239,88 @@ function Product(el) {
           ) : (
             <a
               href={job_apply_link}
-              className="w-fit hover:bg-white bg-[#E45826] transition-all duration-300 hover:text-black py-2  px-5 text-md sm:text-lg font-semibold text-gray-200 rounded-md  border hover:border-[#E45826]"
+              className="w-fit border-[white] transition-all duration-300  py-2 px-4 text-sm sm:text-md font-semibold  rounded-sm  border bg-[#E45826] hover:bg-white hover:border-[#E45826] text-white hover:text-black"
               target="_blank"
             >
               Apply Job
             </a>
           )}
-          <button className="w-fit bg-white transition-all duration-300  py-2  px-5 text-md sm:text-lg font-semibold text-black rounded-md  border border-[#E45826]">
-            {" "}
-            Save
+          <button className="w-fit border-[white] transition-all duration-300  py-2 px-4 text-sm sm:text-md font-semibold  rounded-sm  border  bg-[#E45826] hover:bg-white hover:border-[#E45826] text-white hover:text-black">
+            Save Job
           </button>
         </div>
       </div>
-    </>
+
+      {/* job description ,responsibilties , qualifications , benefits */}
+
+      <div className="w-full flex flex-col gap-3 border rounded-sm   py-1 px-3 bg-white  shadow-md">
+
+{/* job description */}
+        <div className="jobsdescriptionw-full ">
+          <h1 className="font-semibold  mb-2">Job Description :</h1>
+          <div className="pl-5 md:pr-12">
+            <div className={fullScreen ? ` h-full transition-all duration-150 ease-in-out` : 'relative h-[200px] xl:h-[100px] overflow-hidden transition-all duration-150 ease-in-out'}>
+           { !fullScreen &&  <div className=" h-[50px] absolute  left-0 bottom-0  w-full bg-gradient-to-b from-transparent to-[#ffffff]" />}
+
+              {
+                job_description && <>
+                  <p className="text-sm ">{job_description}</p>
+                </>
+              }
+            </div>
+            <button className="bg-gray-200 my-2  p-2 border border-gray-400 rounded-sm  text-xs capitalize" onClick={() => setFullScreen(!fullScreen)} >{fullScreen ? 'hide description ▲ ' : 'show more ▼'}</button>
+          </div>
+
+
+        </div>
+
+        {/* job responsibilties */}
+        <div className="w-full p-1">
+          {
+            (job_highlights.Responsibilities && job_highlights.Responsibilities.length >0) && <ul className="pl-5 md:pr-12">
+              <h1 className="font-semibold mb-2 -ml-6">Responsibilities :</h1>
+              {job_highlights.Responsibilities.map((el,id)=>{
+                return <li key={id} className="list-disc text-sm ">{el}</li>
+              })
+              }
+            </ul>
+          }
+        </div>
+
+        {/* job qualifications */}
+        <div className="w-full p-1">
+          {
+           (job_highlights.Qualifications && job_highlights.Qualifications.length >0) &&<ul className="pl-5 md:pr-12">
+              <h1 className="font-semibold mb-2 -ml-6">Qualifications :</h1>
+              {job_highlights.Qualifications.map((el,id)=>{
+                return <li key={id} className="list-disc text-sm">{el}</li>
+              })
+              }
+            </ul>
+          }
+        </div>
+
+        {/* job benfits */}
+
+        <div className="w-full p-1">
+          {
+            (job_highlights.Benefits && job_highlights.Benefits.length >0) && <ul className="pl-4 md:pr-12">
+              <h1 className="font-semibold mb-2 -ml-6">Benefits:</h1>
+              {job_highlights.Benefits.map((el,id)=>{
+                return <li key={id} className="list-disc text-sm">{el}</li>
+              })
+              }
+            </ul>
+          }
+        </div>
+
+
+
+
+
+      </div>
+    </div>
   );
 }
 
 export default Product;
-
-// <div className='w-full text-white flex flex-col gap-2 '>
-
-// <div className='bg-[#0b0c1f] flex flex-col gap-3 p-2 '>
-//     <div className='flex flex-col  '>
-//         <figure className='w-[60px] sm:w-[65px] sm:h-[65px] h-[60px]  '>
-//             <img src={employer_logo} className='h-full w-full' alt="" />
-//         </figure>
-//         {job_title.length > 26 ? <h1 className='font-semibold text-xl '> {job_title.substring(0, 26)}...</h1> : <h1 className='font-semibold text-xl  ' >{job_title}</h1>
-//         }
-//         <div className='flex items-end gap-1'>
-
-//             {
-//                 employer_name.length > 12 ? <h1 className='text-gray-500 text-lg font-semibold  flex'> {employer_name.substring(0, 10)}... - </h1> : <h1 className='text-gray-500 text-lg font-semibold  flex'> {employer_name} •</h1>
-//             }
-
-//             <p className=' font-semibold text-md text-gray-500 lg:text-lg flex '>{job_city} {job_city ? '•' : ''}</p>
-//             <p className=' font-semibold text-md text-gray-500 lg:text-lg '>{job_country}</p>
-//         </div>
-
-//         <div className='flex flex-col gap-2'>
-
-//             <a href={employer_website} target='_blank' className='text-gray-400 text-sm cursor-pointer font-semibold underline hover:text-blue-600 w-[200px]' > {employer_website}</a>
-
-//             <h1 className='bg-[#1d1f5f54] p-2 font-semibold text-sm text-white w-[170px]  rounded-[4px]' >Job Posted - {new Date(job_posted_at_datetime_utc).toLocaleDateString()}</h1>
-//         </div>
-//     </div>
-
-//     <div className='flex flex-col gap-1'>
-//         <div className='flex gap-1 lowercase items-center'>
-//             <p className='text-2xl text-gray-400' ><FaShoppingBag /> </p>
-//             <p className='p-1 text-md font-semibold text-white'>{!job_is_remote ? 'on-site' : job_is_remote} </p> •
-//             <p className='p-1 text-md font-semibold text-white'>{job_employment_type}</p>
-//             {job_job_title == null ? '' : <p className='p-1 text-md font-semibold text-white' > • {job_job_title}
-//             </p>}
-//         </div>
-//         <div className='flex items-center '>
-//             {job_required_experience.experience_mentioned == true ?
-//                 <>
-//                     <MdAdminPanelSettings className='text-3xl text-gray-400' />
-//                     <p className='py-1 text-md font-semibold text-white'> {Math.floor(job_required_experience.experience_mentioned / 12)}+ years experience</p>  </> : ''}
-
-//         </div>
-
-//     </div>
-
-//     <div className=' w-full my-1 '>
-//         <div className='flex gap-3'>
-//             {
-//                 apply ? <a href={job_apply_link} target='_blank' className='w-[120px] bg-[#E45826] p-2 text-sm font-semibold text-[white]  rounded-md text-center '> Apply </a> : <button disabled className='cursor-not-allowed w-[120px] bg-[#E45826] p-2 text-sm font-semibold text-[white]  rounded-md text-center hover:bg-orange-400 ' > Apply </button>
-//             }
-
-//             <button type='submit' className='w-[120px]  hover:bg-[#E45826] transition-all duration-300 hover:text-white p-2 text-sm font-semibold text-[white]  rounded-md border-[#ffffff79]  border'> Save </button>
-//         </div>
-//         <div className='my-2'>
-//             <h1>
-//                 <p className='bg-[#1d1f5f54] p-2 font-semibold text-sm text-white w-[170px]  rounded-[4px] flex items-center gap-2'><IoAlertCircleOutline className='text-xl text-blue-500' /> {!apply ? "Job not avaliable" : "" + new Date(expirationDate).toLocaleDateString()}</p>
-
-//             </h1>
-//         </div>
-
-//     </div>
-// </div>
-
-// <div className='bg-[#0b0c1f] flex flex-col gap-3 p-2 '>
-//     {/* {job_required_skills !== null ? <div className='flex flex-wrap gap-4'>
-//         <p className='font-semibold'>Skills</p>
-
-//         {job_required_skills.map((el, id) => {
-//             return <p key={id} className='bg-[#25264c] rounded-[4px] py-1 px-2 text-sm text-white'> {el}</p>
-//         })}</div> : ''
-//     } */}
-
-//     {
-//         job_description && <div className='space-y-2'>
-//             <h1 className='font-semibold text-xl '>Job description</h1>
-//             {job_description.length > 1500 ? <p className='text-gray-500 hidden md:flex '>{job_description.substring(0, 1500)}...</p> : <p className='text-gray-500 '>{job_description}</p>}
-//             {job_description.length > 1500 ? <p className='text-gray-500 flex md:hidden'>{job_description.substring(0, 600)}...</p> : <p className='text-gray-500 '>{job_description}</p>}
-
-//         </div>
-//     }
-
-//     {job_highlights.Responsibilities && <div className='space-y-2'>
-//         <h1 className='font-semibold text-xl '>Responsibilities</h1>
-//         {job_highlights.Responsibilities.map((el, id) => {
-//             return <p className='text-gray-500 ' key={id}>{el}</p>
-//         })}
-//     </div>
-
-//     }
-//     {job_highlights.Qualifications && <div className='space-y-2'>
-//         <h1 className='font-semibold text-xl '>Qualifications</h1>
-//         {job_highlights.Qualifications.map((el, id) => {
-//             return <p className='text-gray-500 ' key={id}>{el}</p>
-//         })}
-//     </div>
-
-//     }
-//     {job_highlights.Benefits && <div className='space-y-2'>
-//         <h1 className='font-semibold text-xl '>Benefits</h1>
-//         {job_highlights.Benefits.map((el, id) => {
-//             return <p className='text-gray-500 ' key={id}>{el}</p>
-//         })}
-//     </div>
-
-//     }
-
-// </div>
-
-// </div>
-
-// http://localhost:5173/job-details/oFPyhlXCo-2n3JrJAAAAAA==
