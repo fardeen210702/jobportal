@@ -6,10 +6,13 @@ import { FaPlus } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
 import MobileNav from './MobileNav';
+import { useGlobalContext } from '../contexts/Maincontext';
+
 
 
 function Header() {
     const [toggle, setToggle] = useState(false)
+    const {handleScrollToTop} = useGlobalContext()
 
     function handleToggle() {
         setToggle(!toggle)
@@ -20,7 +23,7 @@ function Header() {
         <div className=' fixed top-1 left-0 w-full z-[999]'>
             {/* mobile navbar */}
             <div className=' rounded-sm p-3 flex justify-between items-center relative md:hidden bg-[white]'>
-                <div className='flex gap-1 items-center'>
+                <div className='flex gap-1 items-center' onClick={handleScrollToTop}>
                     <figure className='w-[40px]'>
                         <Link to='/'>
                         <img src={logo} alt="" />
@@ -42,7 +45,7 @@ function Header() {
 
             {/* Mid screen+ navbar */}
 
-            <div className='hidden md:flex w-full p-3 flexx justify-center  '>
+            <div className='hidden md:flex w-full p-3 flexx justify-center  ' onClick={handleScrollToTop}>
                 <div className='max-w-[1800px]  bg-[white] flex justify-between w-[97%]  p-2 rounded-[3px]'>
                     <div className='flex gap-2 items-center'>
                         <figure className='w-[50px]'>
@@ -55,17 +58,18 @@ function Header() {
 
                     <div className='flex  items-center gap-2'>
                         <ul className='flex gap-4 items-center mr-2 font-medium text-md cursor-pointer  text-[#0b0c1f]'>
-                            <Link to='/jobs'>
-                            <li className='hover:text-[#E45826]'>Jobs</li>
+                            <Link to='/jobs' >
+                            <li className='hover:text-[#E45826]' >Jobs</li>
                             </Link>
                             
                             
                             <Link to='/interviewquestions'>
                             <li  className='hover:text-[#E45826]'>Interview prep</li>
                             </Link>
-                            <Link to='/publishjobs'>
+                            
+                            {/* <Link to='/publishjobs'>
                             <li  className='hover:text-[#E45826] text-[#4b4b4b] hover:border-[#E45826] border rounded-md border-[#6b6a6a65] flex items-center gap-2 px-1 py-2 transition-all duration-150'>Add job <FaPlus className='text-xl'/> </li>
-                            </Link>
+                            </Link> */}
 
                             <Link to='/profile'>
                             <li  className='hover:text-[#E45826] text-3xl text-[gray]'><FaUserCircle/></li>
