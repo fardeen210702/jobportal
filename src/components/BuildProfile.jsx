@@ -1,123 +1,83 @@
-import React, {useState} from 'react'
-import logo from '../assets/logo2.svg'
+import React from 'react'
+import profile from '../assets/profile.svg'
+import google from '../assets/google.png'
+import Form from './Form'
+function BuildProfile() {
 
-function BuildProfile({onSubmit})  {
 
-    const [data, setData] = useState({
-      Fname: '',
-      Sname: '',
-      number: '',
-      birth: '',
-      email: '',
-      skills: '',
-      about:'',
-      pic: '',
-      resume: '',
-    })
-    // const [list, setList] = useState([])
-  
-    function handleChange(e) {
-      let name = e.target.name
-      let value = e.target.value
-      setData({
-        ...data,
-        [name]: value
-      })
-  
-    }
-    function handleImageChange(e) {
-      setData({
-        ...data,
-        pic: URL.createObjectURL(e.target.files[0]),
-      })
-    }
-    function handleResumeChange(e) {
-      setData({
-        ...data,
-        resume: URL.createObjectURL(e.target.files[0]),
-      })
-    }
-  
-    function handleSubmit(e) {
-      e.preventDefault()
-      onSubmit(data)
-     
-    }
-    return (
-      <div className='w-full  flex justify-center md:h-[100vh]  '>
-        <div className='w-full mt-24 sm:mt-0  bg-[#0b0c1f]  sm:flex sm:flex-col sm:items-center '>
-          <div className=' hidden sm:flex  bg-[#E45826]  w-full h-[330px] md:h-[400px] lg:h-[420px] xl:h-[600px] p-3  justify-center items-center  '>
-            <div className='flex '>
-            <img src={logo} className='w-[60px]' alt="" />
-            <h1 className='font-bold text-xl sm:text-2xl px-2 text-[#0b0c1f] mt-4'>JOB PORTAL</h1>
-            </div>
-  
-          </div>
-  
-  
-          <div className='sm:-mt-28 md:-mt-20 xl:-mt-20 2xl:-mt-24 rounded-[4px] rounded-t-[30px] md:overflow-y-scroll sm:w-[60%]   md:w-[45%] lg:w-[30%] 2xl:w-[28%] md:bg-[white] bg-[#0b0c1f]  '>
-            <form action=" " className='star flex flex-col items-center w-full gap-4 font-semibold' onSubmit={handleSubmit} autoComplete='off'>
-              <div className='my-2 w-full '>
-                <h1 className=' capitalize text2 text-2xl text-[#E45826]  font-sans sm:text-3xl md:mx-1 text-center  '>Start building profile</h1>
-              </div>
-              <div className=' w-full  sm:pl-16 md:pl-10  gap-4 flex flex-col items-center '>
-                <div className='flex flex-col pl-2 w-full  '>
-                  <label className=' uppercase text-white  md:text-[#0f0f0faa] ' htmlFor="name">First name</label>
-                  <input className='p-2 w-[90%]  sm:w-[80%] rounded-sm   border border-[#E45826]  ' type="text" name="Fname" id="name" value={data.Fname} onChange={handleChange} />
-                </div>
-                <div className='flex flex-col pl-2 w-full'>
-                  <label className=' uppercase text-white  md:text-[#0f0f0faa] ' htmlFor="Sname">Second name</label>
-                  <input className='p-2 w-[90%] sm:w-[80%] rounded-sm border border-[#E45826]  ' type="text" name="Sname" id="Sname" value={data.Snamename} onChange={handleChange} />
-                </div>
-                <div className='flex flex-col pl-2 w-full'>
-                  <label className=' uppercase text-white  md:text-[#0f0f0faa] ' htmlFor="">Select image</label>
-                  <input className='p-2 w-[90%] sm:w-[80%] rounded-sm text-white md:text-[#0f0f0faa]  ' type="file" name="file" id="file" onChange={handleImageChange} />
-                </div>  
-                <div className='flex flex-col pl-2 w-full'>
-                  <label className=' uppercase text-white  md:text-[#0f0f0faa] ' htmlFor="number">Mobile number</label>
-                  <input className='p-2 w-[90%] sm:w-[80%] rounded-sm border border-[#E45826]  ' type="number" name="number" id="number" value={data.number} onChange={handleChange} />
-                </div>
-                <div className='flex flex-col pl-2 w-full'>
-                  <label className=' uppercase text-white  md:text-[#0f0f0faa] ' htmlFor="email">Email</label>
-                  <input className='p-2 w-[90%] sm:w-[80%] rounded-sm border border-[#E45826]  ' type="email" name="email" id="email" value={data.email} onChange={handleChange} />
-                </div>
-                <div className='flex flex-col pl-2 w-full'>
-                  <label className=' uppercase text-white  md:text-[#0f0f0faa] ' htmlFor="birth">Date of birth</label>
-                  <input className='p-2 w-[90%] sm:w-[80%] rounded-sm border border-[#E45826]  ' type="date" name="birth" id="birth" value={data.birth} onChange={handleChange} />
-                </div>
-                <div className='flex flex-col pl-2 w-full'>
-                  <label className=' uppercase text-white  md:text-[#0f0f0faa] ' htmlFor="">resume</label>
-                  <input className='p-2 border border-red-800 w-[90%] sm:w-[80%] rounded-sm   text-white  md:text-[#0f0f0faa]' type="file" name="file" id="file"
-                    onChange={handleResumeChange} />
-                </div>
+  return (
+    <div className=' w-[98%] max-w-[1500px] md:w-[94%] lg:w-[95%] flex justify-center md:justify-between py-2 '>
 
-                <div className='flex flex-col pl-2 w-full'>
-                  <label className=' uppercase text-white  md:text-[#0f0f0faa] ' htmlFor="text">skills</label>
-                  <textarea className='w-[90%] sm:w-[80%] rounded-sm border border-[#E45826] ' rows='4' type="text" name="skills" id="text" value={data.skills} placeholder='dont use these characters {-,/:#}' onChange={handleChange} />
-                </div>
-                <div className='flex flex-col pl-2 w-full'>
-                  <label className=' uppercase text-white  md:text-[#0f0f0faa] ' htmlFor="about">About</label>
-                  <textarea className='w-[90%] sm:w-[80%] rounded-sm border border-[#E45826] ' rows='4' type="text" name="about" id="about" value={data.about} placeholder='explain yourself ' onChange={handleChange} />
-                </div>
-                <div className='w-full px-2'>
-                  <button type='submit' className='w-[140px]  hover:bg-[#E45826] transition-all duration-300 hover:text-white p-3 text-xl font-semibold text-[#000000]  rounded-sm border-white md:border-[#E45826] border my-4'> Build Profile</button>
-                </div>
-              </div>
-  
-  
-  
-            </form>
-  
-          </div>
-  
-  
-  
-  
+      {/* sticky component */}
+
+      <div className='hidden  md:block sticky top-20 left-0 shadow-sm shadow-slate-300 md:w-[32%] lg:w-[320px] h-[320px] lg:h-[370px] bg-white rounded-sm '>
+
+        <div className='svgprofile w-full mb-1'>
+          <figure className='h-[150px] lg:h-[200px] flex justify-center'>
+            <img className='h-full' src={profile} alt="" />
+          </figure>
+
         </div>
-       
-  
+
+        <div className=' '>
+          {
+            ['Create Your Profile and Attract Recruiters', 'Get Instant Notifications for Suggested Positions', 'Discover Your Ideal Job'].map((el, id) => {
+              return <div key={id} className='text-sm flex items-start md:px-3 lg:px-6 gap-2 my-2 p-1'>
+                <p className='bg-green-400 rounded-full w-[20px] flex justify-center shrink-0 items-center text-white'>✓</p>
+                <span>{el}</span>
+              </div>
+            })
+          }
+
+        </div>
+
       </div>
-    )
-  }
+
+
+      {/* form registration */}
+
+      <div className=' sm:w-[500px] sm:items-center md:items-start sm:gap-9  md:w-[64%] xl:w-[70%]  flex flex-col gap-5 p-1 rounded-sm shadow-sm shadow-slate-300 bg-white '>
+
+        {/* create profile */}
+
+        <div className=' flex flex-col px-2 sm:mt-3 md:mt-5 lg:mt-8 md:px-7  '>
+          <h1 className='font-semibold tracking-wider text-xl sm:text-2xl sm:tracking-wide text-blue-500 '>Create your profile now!!</h1>
+          <p className='text-xs  text-gray-500'>Explore and Apply for Jobs on India’s Leading Job Portal</p>
+        </div>
+
+
+        {/* form creation */}
+
+        <div className='  w-full flex flex-col lg:flex-row '>
+          <div>
+            <Form />
+          </div>
+
+          <div className='w-full  flex flex-col lg:flex-row  lg:h-[300px] lg:px-3 lg:gap-3 xl:gap-14 lg:items-center '>
+
+            <div className='flex lg:flex-col items-center  gap-2 text-sm my-5 lg:px-3     justify-center' >
+              <div className='w-[100px] h-0 lg:w-0 lg:h-[120px] md:w-[150px] border border-gray-300'></div>
+              <p>or</p>
+              <div className='w-[100px] h-0 lg:w-0 lg:h-[120px]   md:w-[150px] border border-gray-300'></div>
+
+            </div>
+            <div className='text-sm mb-2 cursor-pointer  lg:p-2  '>
+              <p className='flex flex-col items-center font-semibold gap-2'>Continue with
+                <span className='rounded-3xl flex gap-2 border py-2 px-3 border-blue-500 w-fit text-blue-500 text-[16px]'>
+                  <img src={google} className='w-[20px]' alt="" />  Google</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+    </div>
+  )
+}
 
 export default BuildProfile

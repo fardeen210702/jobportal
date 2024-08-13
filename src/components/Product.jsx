@@ -255,20 +255,23 @@ function Product(el) {
 
       <div className="w-full flex flex-col gap-3 border rounded-sm   py-1 px-3 bg-white  shadow-md">
 
-{/* job description */}
+        {/* job description */}
         <div className="jobsdescriptionw-full ">
           <h1 className="font-semibold  mb-2">Job Description :</h1>
-          <div className="pl-5 md:pr-12">
-            <div className={fullScreen ? ` h-full transition-all duration-150 ease-in-out` : 'relative h-[200px] xl:h-[100px] overflow-hidden transition-all duration-150 ease-in-out'}>
-           { !fullScreen &&  <div className=" h-[50px] absolute  left-0 bottom-0  w-full bg-gradient-to-b from-transparent to-[#ffffff]" />}
-
-              {
-                job_description && <>
-                  <p className="text-sm ">{job_description}</p>
-                </>
-              }
-            </div>
-            <button className="bg-gray-200 my-2  p-2 border border-gray-400 rounded-sm  text-xs capitalize" onClick={() => setFullScreen(!fullScreen)} >{fullScreen ? 'hide description ▲ ' : 'show more ▼'}</button>
+          <div className="pl-5 text-sm md:pr-12">
+            {
+              job_description && <>
+                {
+                  job_description.length > 300 ? <div className="">
+                  <p>  { !fullScreen ? job_description.substring(0, 500) : job_description}<button onClick={()=>setFullScreen(!fullScreen)}  className="text-gray-500 hover:text-gray-600">{fullScreen ? '...hide' : '...Showmore'}</button></p>
+                  
+                    </div>
+                   :
+                 '' 
+                    
+                }
+              </>
+            }
           </div>
 
 
@@ -277,9 +280,9 @@ function Product(el) {
         {/* job responsibilties */}
         <div className="w-full p-1">
           {
-            (job_highlights.Responsibilities && job_highlights.Responsibilities.length >0) && <ul className="pl-5 md:pr-12">
+            (job_highlights.Responsibilities && job_highlights.Responsibilities.length > 0) && <ul className="pl-5 md:pr-12">
               <h1 className="font-semibold mb-2 -ml-6">Responsibilities :</h1>
-              {job_highlights.Responsibilities.map((el,id)=>{
+              {job_highlights.Responsibilities.map((el, id) => {
                 return <li key={id} className="list-disc text-sm ">{el}</li>
               })
               }
@@ -290,9 +293,9 @@ function Product(el) {
         {/* job qualifications */}
         <div className="w-full p-1">
           {
-           (job_highlights.Qualifications && job_highlights.Qualifications.length >0) &&<ul className="pl-5 md:pr-12">
+            (job_highlights.Qualifications && job_highlights.Qualifications.length > 0) && <ul className="pl-5 md:pr-12">
               <h1 className="font-semibold mb-2 -ml-6">Qualifications :</h1>
-              {job_highlights.Qualifications.map((el,id)=>{
+              {job_highlights.Qualifications.map((el, id) => {
                 return <li key={id} className="list-disc text-sm">{el}</li>
               })
               }
@@ -304,9 +307,9 @@ function Product(el) {
 
         <div className="w-full p-1">
           {
-            (job_highlights.Benefits && job_highlights.Benefits.length >0) && <ul className="pl-4 md:pr-12">
+            (job_highlights.Benefits && job_highlights.Benefits.length > 0) && <ul className="pl-4 md:pr-12">
               <h1 className="font-semibold mb-2 -ml-6">Benefits:</h1>
-              {job_highlights.Benefits.map((el,id)=>{
+              {job_highlights.Benefits.map((el, id) => {
                 return <li key={id} className="list-disc text-sm">{el}</li>
               })
               }
