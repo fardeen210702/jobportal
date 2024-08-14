@@ -35,7 +35,7 @@ function Loop() {
                             <img className='w-full md:w-[80%] lg:w-[42%] xl:w-[40%] h-[300px] sm:h-min object-contain ' src={el.img} alt="" />
                             <div className=' w-[90%]  lg:w-1/2 xl:w-[50%] py-2'>
                             <figcaption  className='font-bold text-xl  mb-4  z-10 sm:text-3xl clr xl:text-5xl text-[#E45826] '>{el.title}</figcaption>
-                            <figcaption className=' text-sm xl:text-xl ' >{el.description}</figcaption>
+                            <figcaption className=' text-sm xl:text-xl mb-5' >{el.description}</figcaption>
                             </div>
                         </figure>
                     </div>

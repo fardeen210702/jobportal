@@ -52,13 +52,13 @@ function AllJobs() {
     return (
         <div className='w-full   flex justify-center my-5 ' >
             <div className='w-[98%]  lg:w-[95%]  flex flex-col md:flex-row md:gap-2'>
-                <div className='md:h-full w-full md:w-[250px] lg:w-[300px] xl:w-[380px]  h-fit flex justify-center    '>
+                <div className='md:h-full w-[98%] md:w-[250px] lg:w-[300px] xl:w-[380px]  h-fit flex justify-center    '>
                     {
-                        !showFilters ?<button onClick={()=>setShowFilters(!showFilters)} className='md:hidden border-[1.2px] border-slate-600 py-1 px-3 bg-gray-300 flex items-center gap-2 mb-5 '> Filter <FaFilter/></button>  : ''
+                        !showFilters ?<button onClick={()=>setShowFilters(!showFilters)} className='md:hidden border-[1.2px] border-slate-600  px-3 bg-gray-300 flex items-center gap-2 mb-5   '> Filter <FaFilter/></button>  : ''
                     }
                     
 
-                    <div className={`${showFilters ? 'flex ' : 'hidden' }  h-fit w-full md:flex md:sticky top-24 `}>
+                    <div className={`${showFilters ? 'flex ' : 'hidden' }  h-fit w-full md:flex md:sticky md:top-24  p-2 md:p-0 `}>
                         <FilterFeatures setShowFilters = {setShowFilters}/>
 
                     </div>
