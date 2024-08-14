@@ -123,11 +123,11 @@ function Card( el ) {
             </h1>
           )}
 
-          {job_required_experience.experience_mentioned === true ? (
+          {job_required_experience != null && job_required_experience.experience_mentioned === true ? (
             <h1 className="bg-gray-200 text-xs  p-2 border border-gray-400 rounded-sm   flex items-center gap-2 capitalize">
               {" "}
               <FaShoppingBag />{" "}
-              {job_required_experience.required_experience_in_months / 12} years
+              {job_required_experience != null && job_required_experience.required_experience_in_months / 12} years
             </h1>
           ) : (
             <h1 className="bg-gray-200  p-2 border border-gray-400 rounded-sm  text-xs capitalize">

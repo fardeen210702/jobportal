@@ -8,7 +8,7 @@ function SinglePage() {
   const { jobs , flag } = useGlobalContext()
   const [job ,setJob] = useState([])
   const id = useParams()
-  const URL = `https://job-server-66141ed39513.herokuapp.com/api/v1/job-finder/jserver?jobId=${id.id}`; 
+  const URL = `https://job-server-02e1a467bb4c.herokuapp.com/api/v1/job-finder/jserver?jobId=${id.id}`; 
   
   async function fetchData(url){
     try {
