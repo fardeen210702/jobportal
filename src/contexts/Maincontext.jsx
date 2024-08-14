@@ -9,14 +9,14 @@ const initialState= {
 function Maincontext({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const URL = 'https://job-server-66141ed39513.herokuapp.com/api/v1/job-finder/jserver/all-jobs';
+  const URL = 'https://job-server-02e1a467bb4c.herokuapp.com/api/v1/job-finder/jserver/all-jobs';
 
 
   async function fetchData(url){
   try {
       const res  = await fetch(url)
       const data = await res.json()
-    //  console.log(data,'fetching data');
+     console.log(data,'fetching data');
       dispatch({type:'JOBS', payload: data})
 
   } catch (error) {
