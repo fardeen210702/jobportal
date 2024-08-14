@@ -62,6 +62,17 @@
 
   }
 
+
+  .textborder {
+    color: white; /* Text color */
+    /* font-size: 40px; Text size */
+    text-shadow:
+      1px 1px 0 black,   /* Shadow on the right-bottom */
+      -1px -1px 0 black, /* Shadow on the left-top */
+      1px -1px 0 black,  /* Shadow on the right-top */
+      -1px 1px 0 black;  /* Shadow on the left-bottom */
+  }
+
   @keyframes all {
     0%,100% { color: red; }
     50%{ color: rgb(184, 176, 176); }

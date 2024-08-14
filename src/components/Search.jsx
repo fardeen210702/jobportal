@@ -1,19 +1,19 @@
 import React from 'react'
 import { FaSearch } from "react-icons/fa";
-import { useFiltercontext } from '../contexts/FilterContext';
 
 function Search() {
-  const {filters:{text},handleChange ,handleSubmit, filteredJobs , flag} = useFiltercontext()
+  
+ 
+  
   return (
     <>
-    <form className='flex items-center w-full ' onSubmit={handleSubmit} >
+    <form className='flex items-center w-full '  >
 
         <input type="text " 
          className='flex-1 border-none outline-none bg-transparent placeholder:text-[gray] p-2   rounded-[4px]  text-black  '
          placeholder='job title,keywords or company'
          name='text'
-         value={text}
-         onChange={handleChange}
+         
          
          />
 

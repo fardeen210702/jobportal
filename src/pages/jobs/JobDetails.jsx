@@ -14,7 +14,7 @@ function SinglePage() {
     try {
         const res  = await fetch(url)
         const data = await res.json()
-        console.log('fetching job data',data);
+        // console.log('fetching job data',data);
         setJob([data])
   
     }catch (error) {

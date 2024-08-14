@@ -45,9 +45,9 @@ function Header() {
 
             {/* Mid screen+ navbar */}
 
-            <div className='hidden md:flex w-full p-3 flexx justify-center  ' onClick={handleScrollToTop}>
+            <div className='hidden md:flex w-full p-3 flexx justify-center  '>
                 <div className='max-w-[1800px]  bg-[white] flex justify-between w-[97%]  p-2 rounded-[3px]'>
-                    <div className='flex gap-2 items-center'>
+                    <div className='flex gap-2 items-center'  onClick={handleScrollToTop}>
                         <figure className='w-[50px]'>
                             <img src={logo} alt="" />
                         </figure>
@@ -59,12 +59,12 @@ function Header() {
                     <div className='flex  items-center gap-2'>
                         <ul className='flex gap-4 items-center mr-2 font-medium text-md cursor-pointer  text-[#0b0c1f]'>
                             <Link to='/jobs' >
-                            <li className='hover:text-[#E45826]' >Jobs</li>
+                            <li className='hover:text-[#E45826]'  onClick={handleScrollToTop} >Jobs</li>
                             </Link>
                             
                             
                             <Link to='/interviewquestions'>
-                            <li  className='hover:text-[#E45826]'>Interview prep</li>
+                            <li  className='hover:text-[#E45826]'  onClick={handleScrollToTop}>Interview prep</li>
                             </Link>
                             
                             {/* <Link to='/publishjobs'>
@@ -72,7 +72,7 @@ function Header() {
                             </Link> */}
 
                             <Link to='/profile'>
-                            <li  className='hover:text-[#E45826] text-3xl text-[gray]'><FaUserCircle/></li>
+                            <li  className='hover:text-[#E45826] text-3xl text-[gray]'  onClick={handleScrollToTop}><FaUserCircle/></li>
                             </Link>
                         </ul>
                         {/* <div className="logins flex gap-2">
