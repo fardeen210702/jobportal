@@ -3,7 +3,7 @@ import { FaFilter } from "react-icons/fa6";
 import { RxCross1 } from "react-icons/rx";
 function FilterFeatures({setShowFilters}) {
     return (
-        <div className='flex flex-col  w-full bg-white rounded-sm p-2  shadow-sm shadow-gray-300  '>
+        <div className='flex flex-col  w-full bg-white rounded-sm p-3     shadow-sm shadow-gray-300  '>
 
 
             <div className=' flex  justify-between '>
@@ -20,9 +20,9 @@ function FilterFeatures({setShowFilters}) {
                     <label htmlFor="">Location :  </label>
                     <input className='border border-slate-700 p-2 text-sm font-normal' type="text" placeholder='Enter Location' />
                 </div>
-                <div className='flex flex-col gap-1  font-semibold w-[98%] sm:w-[50%]'>
+                <div className='flex flex-col gap-1  font-semibold w-[98%] '>
                     <label htmlFor="">Experience :  </label>
-                    <input type="range" />
+                    <input type="range" className='custom-range' />
                     <p className='font-normal text-xs'>20+ years</p>
                 </div>
                 <div className='flex flex-col gap-1    w-[98%]'>

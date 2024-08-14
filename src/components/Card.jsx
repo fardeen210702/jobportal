@@ -76,7 +76,7 @@ function Card( el ) {
 
     return (
         
-        <div onClick={handleScrollToTop} className='w-[350px] md:w-[320px] lg:w-[330px] xl:w-[390px] shadow-sm shadow-slate-200 bg-[white] transition-all duration-300 ease-in rounded-sm     text-black'>
+        <div onClick={handleScrollToTop} className='w-[350px] md:w-[320px] lg:w-[330px] xl:w-[390px] shadow-sm shadow-slate-200 bg-[white] transition-all duration-300 ease-in rounded-sm     text-black 2xl:w-[350px] p-2'>
             <div className='flex justify-between p-3'>
                 <figure className='w-[60px] h-[60px] flex items-center'>
                     {employer_logo ? <img src={employer_logo} alt='' className='w-full h-full object-contain' /> : <img src={load} alt="" />}
