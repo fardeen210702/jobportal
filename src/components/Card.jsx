@@ -76,7 +76,7 @@ function Card( el ) {
 
     return (
         
-        <div onClick={handleScrollToTop} className='w-[350px] md:w-[395px] border border-[#e4592635] hover:border-[#E45826] bg-[white] transition-all duration-300 ease-in rounded-[4px]    my-2 text-black'>
+        <div onClick={handleScrollToTop} className='w-[350px] md:w-[320px] lg:w-[330px] xl:w-[390px] shadow-sm shadow-slate-200 bg-[white] transition-all duration-300 ease-in rounded-sm     text-black'>
             <div className='flex justify-between p-3'>
                 <figure className='w-[60px] h-[60px] flex items-center'>
                     {employer_logo ? <img src={employer_logo} alt='' className='w-full h-full object-contain' /> : <img src={load} alt="" />}
@@ -165,22 +165,7 @@ function Card( el ) {
 
           </div>
 
-            {/* <div className='px-3'>
-                <div className='w-full flex gap-2 items-center'>
-               { job_country || job_city && <h1 className='bg-[#80808045] rounded-[20px] py-1 px-2 text-xs text-gray-500' > {job_city} {job_country ? ',' : ''} {job_country}</h1>}
-
-                    <h1 className='lowercase bg-[#80808045] py-1 px-2 rounded-[20px] text-xs text-gray-500 '> {
-                        job_is_remote ? 'remote' : job_employment_type}</h1>
-
-
-                       { job_required_experience.experience_mentioned == true ?(<h1 className='bg-[#80808045] py-1 px-2 rounded-[20px] text-xs text-gray-500 '>{job_required_experience.required_experience_in_months / 12 + 'years exp...'}</h1>):(<h1 className='bg-[#80808045] py-1 px-2 rounded-[20px] text-xs text-gray-500 '  >{'fresher'}</h1>) }
-
-
-                        <h1 className=' text-md'> <FaRegBookmark/></h1>
-                </div>
-                <button type='submit' className='w-[100px]  bg-[white] hover:bg-[#E45826] border border-[#e4592635] rounded-sm transition-all duration-300 hover:text-white p-2 text-xs font-semibold text-[black]    my-4'> APPLY JOB</button>
-
-            </div> */}
+           
 
 
         </div>
@@ -189,4 +174,6 @@ function Card( el ) {
 }
 
 export default Card
+
+
 

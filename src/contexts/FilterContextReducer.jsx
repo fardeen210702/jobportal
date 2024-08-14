@@ -19,22 +19,8 @@ function FilterContextReducer(state, action) {
                 
             }
 
-            case 'SEARCH_QUERY':
-                const {copiedFilteredJobs} = state;
-                let newCopiedList = [...copiedFilteredJobs];
-                let {text} = state.filters;
-
-            if(text){
-                newCopiedList = newCopiedList.filter((el)=>{
-                    return el.job_title.toLowerCase().includes(text)
-                })
-            }
-            
-            return {
-                ...state,
-                filteredJobs:newCopiedList
-                
-            }
+          
+              
 
             
         default:
