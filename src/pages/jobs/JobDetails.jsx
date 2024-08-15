@@ -12,23 +12,33 @@ function SinglePage() {
   const id = useParams()
 
 
+
   const URL = `https://job-server-02e1a467bb4c.herokuapp.com/api/v1/job-finder/jserver/?jobId=${id.id}`;
   
   async function fetchData(url) {
     try {
       const res = await fetch(url)
-      if(res.status == 404){
+      if(!inSuccessRange(res.status)){
         setError(true);
       }
    
       
       const data = await res.json()
       setJob([data])
+      console.log(job);
+      
 
     } catch (error) {
       
       
     }
+  }
+
+  function inSuccessRange(statusCode){
+    if(statusCode > 199 && statusCode < 300){
+      return true;
+    }
+    return false;
   }
   useEffect(() => {
     if (id) {
@@ -36,9 +46,10 @@ function SinglePage() {
     }
   }, [id])
 
+  let prop = "Oops! The Job you're looking for doesn't exist or has been expired "
   return (
     <>
-    { error ? <Error/> : 
+    { error ? <Error prop = {prop} /> : 
     <div className=' w-full flex items-center justify-center '>
       {
         flag ? (

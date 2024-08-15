@@ -49,7 +49,7 @@ function InfiniteScroller() {
                 <div id='scroller' className=' scroller w-full overflow-hidden '>
 
 
-                    <div className="content w-full flex gap-10 p-2 scroll"   >
+                    <div className=" w-full flex gap-10 p-2 scroll"   >
                         {
                             companies.map((el, id) => {
                                 return <div key={id} className=' bg-white border border-[#ffffff63] w-[180px] sm:w-[220px] sm:p-8 sm:h-[60px] md:h-[40px] h-[50px] p-6  shrink-0 rounded-[4px] shadow-md shadow-[#6161614a]'>

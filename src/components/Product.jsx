@@ -36,7 +36,7 @@ function Product(el) {
     job_description,
 
   } = el;
-  // console.log(el);
+  console.log(el);
 
   let newText = el.job_required_skills.replace(/[\[\]"]/g, "");
   let splitText = newText.split(",");
@@ -255,21 +255,26 @@ function Product(el) {
 
       {/* job description ,responsibilties , qualifications , benefits */}
 
-      <div className="w-full flex flex-col gap-3 border rounded-sm   py-1 px-3 bg-white  shadow-md">
+      <div className="w-full flex flex-col gap-2 border rounded-sm   py-1 px-3 bg-white  shadow-md">
 
         {/* job description */}
-        <div className="jobsdescriptionw-full ">
-          <h1 className="font-semibold  mb-2">Job Description :</h1>
-          <div className="pl-5 text-sm md:pr-12">
+        <div className="jobsdescription w-full ">
+          <div className="pl-5 md:pr-12 ">
             {
               (job_description !=null && job_description !='') && <>
                 {
                   job_description.length > 300 ? <div className="">
-                  <p>  { !fullScreen ? job_description.substring(0, 500) : job_description}<button onClick={()=>setFullScreen(!fullScreen)}  className="text-gray-500 hover:text-gray-600">{fullScreen ? '...hide' : '...Showmore'}</button></p>
+                    <h1 className="font-semibold  mb-2 -ml-6">Job Description :</h1>
+                  <p className="text-sm">  { !fullScreen ? job_description.substring(0, 300) : job_description}<button onClick={()=>setFullScreen(!fullScreen)}  className="text-gray-500 hover:text-gray-600">{fullScreen ? '...hide' : '...Showmore'}</button></p>
                   
                     </div>
                    :
-                 '' 
+                    <div className="">
+                    <h1 className="font-semibold  mb-2 -ml-6">Job Description :</h1>
+                  <p className="text-sm">{job_description}</p>
+                  
+                    </div>
+                 
                     
                 }
               </>

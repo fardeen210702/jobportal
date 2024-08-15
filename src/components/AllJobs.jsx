@@ -93,10 +93,9 @@ function AllJobs() {
                     {
                         state.allJobs.map((el, id) => {
                             return <div className='flex justify-center ' key={id}  >
+
                                 
-                                <Link to={`/jobs/${el.job_id}`}>
                                     <Card {...el} />
-                                </Link>
                             </div>
                         })
                     }

@@ -5,10 +5,10 @@ import Home from './pages/Home'
 import Jobs from './pages/jobs/Jobs'
 import Profile from './pages/Profile'
 import Contact from './pages/Contact'
-import InterviewQuestions from './pages/InterviewQuestions'
 import Publishjobs from './pages/jobs/Publishjobs'
 import JobDetails from './pages/jobs/JobDetails'
 import Error from './pages/Error'
+import InterviewPrep from './pages/InterviewPrep'
 
 
 
@@ -29,7 +29,7 @@ function App() {
             <Route path='/profile' element={<Profile/>} />
             <Route path='/contact' element={<Contact/>} />
             {/* <Route path='/savedjobs' element={<SavedJobs/>} /> */}
-            <Route path='/interview-questions' element={<InterviewQuestions/>} />
+            <Route path='/interviewprep' element={<InterviewPrep/>} />
             <Route path='/jobs/:id' element={<JobDetails/>} />
             <Route path='*' element={<Error/>} />
 
