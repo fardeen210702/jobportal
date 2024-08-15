@@ -1,11 +1,14 @@
 import React from 'react'
 import profile from '../assets/interview.svg'
 import { Link } from 'react-router-dom'
+import { useGlobalContext } from '../contexts/Maincontext'
 
 
 function ProfileComp() {
+const {handleScrollToTop} = useGlobalContext()
+
   return (
-    <div className='w-[98%] md:w-[95%] lg:h-[400px] xl:h-[490px] rounded-[4px] my-6  shadow-lg shadow-[#65646411] bg-[white]  flex flex-col md:flex-row items-center lg:justify-around '>
+    <div onClick={handleScrollToTop} className='w-[98%] md:w-[95%] lg:h-[400px] xl:h-[490px] rounded-[4px] my-6  shadow-lg shadow-[#65646411] bg-[white]  flex flex-col md:flex-row items-center lg:justify-around '>
         <div className='w-full md:w-1/2 p-2 flex flex-col gap-5  '>
             <p className='text-[black ] font-bold  text-xl sm:2xl lg:text-3xl'>Profile</p>
             <h1 className='text-xl sm:2xl  lg:text-3xl font-bold text-[#E45826]'> BUILD A STRONG PROFILE TO STANDOUT </h1>

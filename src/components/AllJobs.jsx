@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { useGlobalContext } from '../contexts/Maincontext'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Loading from '../components/Loading'
 import { FaFilter } from "react-icons/fa6";
@@ -8,16 +7,36 @@ import FilterFeatures from './FilterFeatures';
 
 
 function AllJobs() {
-    const { jobs } = useGlobalContext();
-    const [showJobs, setShowJobs] = useState([])
+  
+    
     const [isLoading, setIsLoading] = useState(false)
     const [showFilters, setShowFilters] = useState(false)
-    // console.log(jobs);
+    const [allJobs, setAllJobs] = useState([])
+    const [pageNumber, setPageNumber] = useState(0)
+    const pageNumberRef = useRef(pageNumber)
 
+    useEffect(()=>{
+        pageNumberRef.current = pageNumber
+    },[pageNumber])
+
+    const url = `https://job-server-02e1a467bb4c.herokuapp.com/api/v1/job-finder/jserver/all-jobs?pageNo=${pageNumber}&pageSize=10`
+    async function fetchdata(url) {
+        try {
+            const res = await fetch(url)
+            const data = await res.json()
+            setAllJobs((prev)=>[...prev, ...data])
+            // console.log(allJobs, 'fetching data');
+        } catch (error) {
+            // console.log('error', error);
+        }
+    }
     useEffect(() => {
+        fetchdata(url)
+    }, [url])
 
-        setShowJobs(jobs.slice(0, 9));
-    }, [jobs])
+
+
+
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
@@ -32,34 +51,35 @@ function AllJobs() {
             window.removeEventListener('scroll', handleScroll)
         }
 
-    }, [showJobs])
+    }, [allJobs])
 
     function loadMoreData() {
         if (!isLoading) {
             setIsLoading(true);
             let setTime = setTimeout(() => {
-                const jobsLength = showJobs.length;
-                const additionalJobLength = jobs.slice(
-                    jobsLength,
-                    jobsLength + 9
-                )
-                setShowJobs((prev) => [...prev, ...additionalJobLength])
+                const pageSize = 10; // Adjust this to match the pageSize you use in the API
+                if (allJobs.length % pageSize === 0) {
+                    setPageNumber(prev => prev + 1);
+                }
+               
                 setIsLoading(false)
 
             }, 1000);
         }
     }
+
+
     return (
         <div className='w-full   flex justify-center my-5 ' >
             <div className='w-[98%]  lg:w-[95%]  flex flex-col md:flex-row md:gap-2'>
                 <div className='md:h-full w-[98%] md:w-[250px] lg:w-[300px] xl:w-[380px]  h-fit flex justify-center    '>
                     {
-                        !showFilters ?<button onClick={()=>setShowFilters(!showFilters)} className='md:hidden border-[1.2px] border-slate-600  px-3 bg-gray-300 flex items-center gap-2 mb-5   '> Filter <FaFilter/></button>  : ''
+                        !showFilters ? <button onClick={() => setShowFilters(!showFilters)} className='md:hidden border-[1.2px] border-slate-600  px-3 bg-gray-300 flex items-center gap-2 mb-5   '> Filter <FaFilter /></button> : ''
                     }
-                    
 
-                    <div className={`${showFilters ? 'flex ' : 'hidden' }  h-fit w-full md:flex md:sticky md:top-24  p-2 md:p-0 `}>
-                        <FilterFeatures setShowFilters = {setShowFilters}/>
+
+                    <div className={`${showFilters ? 'flex ' : 'hidden'}  h-fit w-full md:flex md:sticky md:top-24  p-2 md:p-0 `}>
+                        <FilterFeatures setShowFilters={setShowFilters} />
 
                     </div>
                 </div>
@@ -67,7 +87,7 @@ function AllJobs() {
 
                 <div className='w-full flex flex-wrap justify-center gap-4   '>
                     {
-                        showJobs.map((el, id) => {
+                        allJobs.map((el, id) => {
                             return <div className='flex justify-center ' key={id}  >
                                 <Link to={`/jobs/${el.job_id}`}>
                                     <Card {...el} />
@@ -77,11 +97,12 @@ function AllJobs() {
                     }
 
 
-                </div>
-                {isLoading && <div className='w-full flex justify-center'>
-                    <Loading />
+                    {isLoading && <div className='w-full flex justify-center'>
+                        <Loading />
 
-                </div>}
+                    </div>}
+                </div>
+
             </div>
 
         </div>

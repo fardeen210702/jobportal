@@ -14,7 +14,6 @@ function Jobs() {
     <>{
       flag ? (<>
         <div className='h-[100vh] flex justify-center items-center'>
-
           <Loading />
         </div>
       </>)

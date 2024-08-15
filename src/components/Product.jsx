@@ -11,6 +11,8 @@ import load from "../assets/load.svg";
 import { IoAlertCircleOutline, IoLocationSharp } from "react-icons/io5";
 
 function Product(el) {
+  
+  
   const [fullScreen, setFullScreen] = useState(false)
   const {
     job_id,
@@ -260,7 +262,7 @@ function Product(el) {
           <h1 className="font-semibold  mb-2">Job Description :</h1>
           <div className="pl-5 text-sm md:pr-12">
             {
-              job_description && <>
+              (job_description !=null && job_description !='') && <>
                 {
                   job_description.length > 300 ? <div className="">
                   <p>  { !fullScreen ? job_description.substring(0, 500) : job_description}<button onClick={()=>setFullScreen(!fullScreen)}  className="text-gray-500 hover:text-gray-600">{fullScreen ? '...hide' : '...Showmore'}</button></p>
