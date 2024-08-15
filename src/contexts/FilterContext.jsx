@@ -11,13 +11,13 @@ const initialState = {
  
 }
 function FilterContext({ children }) {
-  const { jobs } = useGlobalContext()
+  // const { jobs } = useGlobalContext()
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  useEffect(() => {
-    dispatch({ type: 'FILTERED_DATA', payload: jobs })
+  // useEffect(() => {
+  //   dispatch({ type: 'FILTERED_DATA', payload: jobs })
 
-  }, [jobs])
+  // }, [jobs])
 
 
   

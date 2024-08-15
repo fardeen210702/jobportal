@@ -61,52 +61,71 @@
     animation: all 0.9s linear infinite;
 
   }
-/* Style the range input track */
-/* Style the range input thumb */
-.range-input::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 24px;
-  height: 24px;
-  background: #E45826; /* Custom color */
-  cursor: pointer;
+  /* Custom range slider styles */
+.custom-range-slider {
+  -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+  width: 100%; /* Full width */
+  background: transparent; /* Transparent background */
+}
+
+/* Track styles */
+.custom-range-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px; /* Thinner track */
+  background: #ddd; /* Light grey background for the track */
+  border-radius: 2px; /* Rounded corners */
+}
+
+/* Handle styles */
+.custom-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+  width: 16px; /* Smaller thumb */
+  height: 16px; /* Smaller thumb */
+  background: #E45826; /* Custom color for the thumb */
+  border-radius: 50%; /* Circular thumb */
+  cursor: pointer; /* Pointer cursor on hover */
+  position: relative; /* Position relative to align the thumb */
+}
+
+/* Track styles for Firefox */
+.custom-range-slider::-moz-range-track {
+  width: 100%;
+  height: 4px; /* Thinner track */
+  background: #ddd;
+  border-radius: 2px;
+}
+
+/* Handle styles for Firefox */
+.custom-range-slider::-moz-range-thumb {
+  width: 16px; /* Smaller thumb */
+  height: 16px; /* Smaller thumb */
+  background: #E45826;
   border-radius: 50%;
-}
-
-.range-input::-moz-range-thumb {
-  width: 24px;
-  height: 24px;
-  background: #E45826; /* Custom color */
   cursor: pointer;
-  border-radius: 50%;
 }
 
-.range-input::-ms-thumb {
-  width: 24px;
-  height: 24px;
-  background: #E45826; /* Custom color */
+/* Track styles for IE */
+.custom-range-slider::-ms-track {
+  width: 100%;
+  height: 4px; /* Thinner track */
+  background: transparent; /* Transparent background for track */
+  border-color: transparent; /* Remove border */
+  color: transparent; /* Remove color */
+}
+
+/* Handle styles for IE */
+.custom-range-slider::-ms-thumb {
+  width: 16px; /* Smaller thumb */
+  height: 16px; /* Smaller thumb */
+  background: #E45826;
+  border-radius: 50%;
   cursor: pointer;
-  border-radius: 50%;
 }
 
-/* Style the range input track */
-.range-input::-webkit-slider-runnable-track {
-  background: #E45826; /* Custom color */
-  height: 2px;
+/* Track styles for WebKit browsers */
+.custom-range-slider::-webkit-slider-thumb:active {
+  background: #D54C1E; /* Slightly darker color when active */
 }
-
-.range-input::-moz-range-track {
-  background: #E45826; /* Custom color */
-  height: 2px;
-}
-
-.range-input::-ms-track {
-  background: #E45826; /* Custom color */
-  height: 2px;
-  border-color: transparent;
-  color: transparent;
-}
-
 
   .textborder {
     color: white; /* Text color */

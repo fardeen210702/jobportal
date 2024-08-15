@@ -1,19 +1,21 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useReducer, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Loading from '../components/Loading'
 import { FaFilter } from "react-icons/fa6";
 import Card from './Card'
 import FilterFeatures from './FilterFeatures';
-
+import reducer from '../contexts/FilterJobsReducer';
 
 function AllJobs() {
-  
-    
     const [isLoading, setIsLoading] = useState(false)
     const [showFilters, setShowFilters] = useState(false)
-    const [allJobs, setAllJobs] = useState([])
     const [pageNumber, setPageNumber] = useState(0)
     const pageNumberRef = useRef(pageNumber)
+    const initialState = {
+        allJobs:[]
+    }
+
+    const [state, dispatch] = useReducer(reducer,initialState)
 
     useEffect(()=>{
         pageNumberRef.current = pageNumber
@@ -24,8 +26,11 @@ function AllJobs() {
         try {
             const res = await fetch(url)
             const data = await res.json()
-            setAllJobs((prev)=>[...prev, ...data])
-            // console.log(allJobs, 'fetching data');
+            dispatch({type:'FILTERALLJOBS',payload: data})
+            console.log(state.allJobs);
+            console.log(pageNumberRef.current);
+            
+            
         } catch (error) {
             // console.log('error', error);
         }
@@ -51,17 +56,16 @@ function AllJobs() {
             window.removeEventListener('scroll', handleScroll)
         }
 
-    }, [allJobs])
+    }, [state.allJobs])
 
     function loadMoreData() {
         if (!isLoading) {
             setIsLoading(true);
             let setTime = setTimeout(() => {
                 const pageSize = 10; // Adjust this to match the pageSize you use in the API
-                if (allJobs.length % pageSize === 0) {
+                if (state.allJobs.length % pageSize === 0) {
                     setPageNumber(prev => prev + 1);
                 }
-               
                 setIsLoading(false)
 
             }, 1000);
@@ -87,8 +91,9 @@ function AllJobs() {
 
                 <div className='w-full flex flex-wrap justify-center gap-4   '>
                     {
-                        allJobs.map((el, id) => {
+                        state.allJobs.map((el, id) => {
                             return <div className='flex justify-center ' key={id}  >
+                                
                                 <Link to={`/jobs/${el.job_id}`}>
                                     <Card {...el} />
                                 </Link>
