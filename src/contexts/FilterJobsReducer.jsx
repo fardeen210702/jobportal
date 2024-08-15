@@ -1,14 +1,6 @@
 
-function MaincontextReducer(state, action) {
+function FilterJobsReducer(state,action) {
     switch (action.type) {
-        case 'JOBS':
-            return {
-                ...state,
-                jobs: action.payload,
-
-            }
-
-
         case 'FILTERALLJOBS':
             return {
                 ...state,
@@ -19,7 +11,9 @@ function MaincontextReducer(state, action) {
 
         default:
             return state
+    
     }
+  
 }
 
-export default MaincontextReducer
+export default FilterJobsReducer

@@ -3,23 +3,31 @@ import { useParams } from 'react-router-dom'
 import Product from '../../components/Product';
 import { useGlobalContext } from '../../contexts/Maincontext';
 import Loading from '../../components/Loading';
+import Error from '../Error';
 
 function SinglePage() {
   const { jobs, flag } = useGlobalContext()
   const [job, setJob] = useState([])
+  const [error, setError] = useState(false);
   const id = useParams()
 
 
-  const URL = `https://job-server-02e1a467bb4c.herokuapp.com/api/v1/job-finder/jserver?jobId=${id.id}`;
-
+  const URL = `https://job-server-02e1a467bb4c.herokuapp.com/api/v1/job-finder/jserver/?jobId=${id.id}`;
+  
   async function fetchData(url) {
     try {
       const res = await fetch(url)
+      if(res.status == 404){
+        setError(true);
+      }
+   
+      
       const data = await res.json()
-      // console.log('fetching job data',data);
       setJob([data])
 
     } catch (error) {
+      
+      
     }
   }
   useEffect(() => {
@@ -29,6 +37,8 @@ function SinglePage() {
   }, [id])
 
   return (
+    <>
+    { error ? <Error/> : 
     <div className=' w-full flex items-center justify-center '>
       {
         flag ? (
@@ -48,7 +58,11 @@ function SinglePage() {
           </div>
       }
 
+
     </div>
+
+}
+    </>
   )
 }
 

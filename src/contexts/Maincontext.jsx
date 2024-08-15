@@ -5,9 +5,13 @@ const Data = createContext()
 
 const initialState = {
   jobs: [],
+
+
 }
 function Maincontext({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const [flag, setFlag] = useState(true)
+  const [submit,setSubmit] = useState(false)
 
   const URL = 'https://job-server-02e1a467bb4c.herokuapp.com/api/v1/job-finder/jserver/all-jobs';
 
@@ -29,6 +33,9 @@ function Maincontext({ children }) {
   }, [])
 
 
+ 
+
+
   function handleScrollToTop() {
     window.scrollTo(0, 0)
   }
@@ -36,7 +43,6 @@ function Maincontext({ children }) {
 
   // session relaoding 
 
-  const [flag, setFlag] = useState(true)
 
 
   useEffect(() => {
@@ -61,10 +67,9 @@ function Maincontext({ children }) {
       })
 
     }
-
-
-
   }, [flag])
+
+  
 
   return (
     <Data.Provider value={{ ...state, handleScrollToTop, flag }}>
