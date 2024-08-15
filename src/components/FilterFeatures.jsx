@@ -22,7 +22,7 @@ function FilterFeatures({setShowFilters}) {
                 </div>
                 <div className='flex flex-col gap-1  font-semibold w-[98%] '>
                     <label htmlFor="">Experience :  </label>
-                    <input type="range" className='custom-range' />
+                    <input type="range" className='range-input' />
                     <p className='font-normal text-xs'>20+ years</p>
                 </div>
                 <div className='flex flex-col gap-1    w-[98%]'>

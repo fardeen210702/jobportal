@@ -2,11 +2,14 @@ import React from 'react'
 import profile from '../assets/profile.svg'
 import google from '../assets/google.png'
 import Form from './Form'
+import { useGlobalContext } from '../contexts/Maincontext'
+
 function BuildProfile() {
 
+const {handleScrollToTop} = useGlobalContext()
 
   return (
-    <div className=' w-[98%] max-w-[1500px] md:w-[94%] lg:w-[95%] flex justify-center md:justify-between py-2 '>
+    <div onClick={handleScrollToTop} className=' w-[98%] max-w-[1500px] md:w-[94%] lg:w-[95%] flex justify-center md:justify-between py-2 '>
 
       {/* sticky component */}
 
