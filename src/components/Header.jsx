@@ -23,14 +23,14 @@ function Header() {
         <div className=' fixed top-1 left-0 w-full z-[999]'>
             {/* mobile navbar */}
             <div className=' rounded-sm p-3 flex justify-between items-center relative md:hidden bg-[white]'>
+                        <Link to='/'>
                 <div className='flex gap-1 items-center' onClick={handleScrollToTop}>
                     <figure className='w-[40px]'>
-                        <Link to='/'>
                         <img src={logo} alt="" />
-                        </Link>
                     </figure>
                     <h1 className='font-bold text-xl text-[#0b0c1f]'>JOBPORTAL</h1>
                 </div>
+                        </Link>
                 <div onClick={handleToggle} className='flex items-center gap-2'>
 
                     <span className='text-2xl font-bold text-[#0b0c1f]'>{toggle ? <RxCross2 /> : <IoMenu />}
@@ -63,7 +63,7 @@ function Header() {
                             </Link>
                             
                             
-                            <Link to='/interviewquestions'>
+                            <Link to='/interviewprep'>
                             <li  className='hover:text-[#E45826]'  onClick={handleScrollToTop}>Interview prep</li>
                             </Link>
                             

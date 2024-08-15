@@ -12,7 +12,7 @@ const {handleScrollToTop} = useGlobalContext()
         <p className='text-[#07081c] font-bold  text-xl sm:text-2xl lg:text-3xl'>Interview Prep</p>
         <h1 className='text-xl sm:text-2xl lg:text-3xl font-bold text-[#E45826] uppercase'> Preparing for Success: Strategies for Nailing Your Interview </h1>
         <p className='text-gray-700 text-md sm:text-lg lg:text-xl'> Equip yourself with knowledge, practice, and confidence to conquer your upcoming interview and land your dream opportunity </p>
-        <Link to='*'>
+        <Link to='/interviewprep'>
         <button className='w-fit hover:bg-[#E45826] transition-all duration-300 hover:text-white px-3 py-2 text-xl font-semibold text-black rounded-sm border-[#E45826] border'> Start preparation</button>
         </Link>
     </div>

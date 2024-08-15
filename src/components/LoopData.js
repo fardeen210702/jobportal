@@ -43,7 +43,7 @@ const companies = [
     },
     {
         img:ola,
-        color:'white'
+        // color:'white'
     },
     {
         img:uber,
