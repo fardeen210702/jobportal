@@ -13,7 +13,7 @@ function Maincontext({ children }) {
   const [flag, setFlag] = useState(true)
   const [submit,setSubmit] = useState(false)
 
-  const URL = 'https://job-server-02e1a467bb4c.herokuapp.com/api/v1/job-finder/jserver/all-jobs';
+  const URL = import.meta.env.VITE_REACT_APP_ALL_JOBS;
 
 
   async function fetchData(url) {

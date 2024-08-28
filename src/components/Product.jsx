@@ -36,7 +36,6 @@ function Product(el) {
     job_description,
 
   } = el;
-  console.log(el);
 
   let newText = el.job_required_skills.replace(/[\[\]"]/g, "");
   let splitText = newText.split(",");
