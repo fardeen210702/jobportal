@@ -12,8 +12,8 @@ function SinglePage() {
   const id = useParams()
 
 
-
-  const URL = `https://job-server-02e1a467bb4c.herokuapp.com/api/v1/job-finder/jserver/?jobId=${id.id}`;
+  const jobById = import.meta.env.VITE_REACT_APP_JOB_BY_ID
+  const URL = `${jobById}/?jobId=${id.id}`;
   
   async function fetchData(url) {
     try {

@@ -27,12 +27,10 @@ function AllJobs() {
             const res = await fetch(url)
             const data = await res.json()
             dispatch({type:'FILTERALLJOBS',payload: data})
-            console.log(state.allJobs);
-            console.log(pageNumberRef.current);
-            
+           
             
         } catch (error) {
-            // console.log('error', error);
+            
         }
     }
     useEffect(() => {
