@@ -13,7 +13,7 @@ function SinglePage() {
 
 
   const jobById = import.meta.env.VITE_REACT_APP_JOB_BY_ID
-  const URL = `${jobById}/?jobId=${id.id}`;
+  const URL = jobById+`${id.id}`;
   
   async function fetchData(url) {
     try {

@@ -21,7 +21,8 @@ function AllJobs() {
         pageNumberRef.current = pageNumber
     },[pageNumber])
 
-    const url = `https://job-server-02e1a467bb4c.herokuapp.com/api/v1/job-finder/jserver/all-jobs?pageNo=${pageNumber}&pageSize=10`
+    const BASE_URL = import.meta.env.VITE_REACT_APP_ALL_JOBS;
+    const url = BASE_URL+`?pageNo=${pageNumber}&pageSize=10`
     async function fetchdata(url) {
         try {
             const res = await fetch(url)
