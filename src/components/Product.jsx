@@ -9,11 +9,10 @@ import { MdAdminPanelSettings } from "react-icons/md";
 import load from "../assets/load.svg";
 
 import { IoAlertCircleOutline, IoLocationSharp } from "react-icons/io5";
+import JobDescription from "./JobDescription";
 
 function Product(el) {
-  
-  
-  const [fullScreen, setFullScreen] = useState(false)
+
   const {
     job_id,
     job_title,
@@ -257,7 +256,7 @@ function Product(el) {
       <div className="w-full flex flex-col gap-2 border rounded-sm   py-1 px-3 bg-white  shadow-md">
 
         {/* job description */}
-        <div className="jobsdescription w-full ">
+        {/* <div className="jobsdescription w-full ">
           <div className="pl-5 md:pr-12 ">
             {
               (job_description !=null && job_description !='') && <>
@@ -279,9 +278,9 @@ function Product(el) {
               </>
             }
           </div>
+        </div> */}
 
-
-        </div>
+          <JobDescription description={job_description}/>
 
         {/* job responsibilties */}
         <div className="w-full p-1">
