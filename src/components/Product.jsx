@@ -215,6 +215,28 @@ function Product(el) {
           )}
         </div>
 
+
+        <div className="isDirectApplyJobs">
+          {
+            job_apply_is_direct ?
+            <button
+              className="cursor-not-allowed w-fit border-[white] transition-all duration-300  py-1 text-sm sm:text-md font-semibold  rounded-sm  border  hover:border-[#E45826] text-[#5c86f9]"
+              disabled> Job can be applied directly 😀 </button>
+
+            :
+
+            <div className="redirect-info">
+            <h4
+              className="cursor-not-allowed w-fit border-[white] transition-all duration-300  py-1 text-sm sm:text-md font-semibold  rounded-sm  border hover:bg-white hover:text-black"
+              disabled> This job does not provide a direct apply link.   
+              
+            </h4>
+            <p className="py-1 px-2 text-xs text-red-500">** Can be redirected to a third pary website **</p>
+            
+            </div>
+          }
+        </div>
+
         {/* job apply link */}
         <div className="jobapplication my-3 flex gap-3 items-center ">
           {job_offer_expiration_datetime_utc ? (

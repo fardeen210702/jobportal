@@ -9,6 +9,7 @@ import Publishjobs from './pages/jobs/Publishjobs'
 import JobDetails from './pages/jobs/JobDetails'
 import Error from './pages/Error'
 import InterviewPrep from './pages/InterviewPrep'
+import Footer from './components/bottom/Footer'
 
 
 
@@ -34,6 +35,7 @@ function App() {
             <Route path='*' element={<Error/>} />
 
           </Routes>
+          <Footer/>
         </Router>
       </div>
 
